@@ -1,6 +1,6 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = cs_CZ
-\documentclass[a4paper, 10pt, oneside, draft]{report}
+\documentclass[a4paper, 10pt, oneside]{report}
 
 % Oprava vykopírovávání diakritiky
 \usepackage[resetfonts]{cmap}
@@ -11,7 +11,7 @@
 % Jazyk čeština
 \usepackage[czech]{babel}
 % Geometrie stránky
-\usepackage[top=3cm, left=2cm, bottom=3cm, right=2cm]{geometry}
+\usepackage[top=2cm, left=2cm, bottom=2cm, right=2cm]{geometry}
 % Obrázky
 \usepackage{graphicx}
 % Složka s obrázky
@@ -28,17 +28,23 @@
 \usepackage{booktabs}
 % Plovoucí prostředí
 \usepackage{float}
+% Seznamy
+\usepackage{enumitem}
+\setlist{nosep}
+\setlist[description]{font=\normalfont,labelindent=2em}
 % Tučný font
 \usepackage{bm}
 % Jednotky SI
 \usepackage{siunitx}
-\sisetup{output-decimal-marker = {,}, separate-uncertainty = true}
+\sisetup{output-decimal-marker = {,}}
 % Soubory PDF
-\usepackage[unicode=true,colorlinks=true,pdflang=cs,pdfcreator=LaTeX,verbose=true]{hyperref}
+\usepackage[unicode=true,colorlinks=true,pdflang=cs,verbose=true]{hyperref}
 % Rozestupy odstavců
 \parskip=1ex
 % Odsazení odstavců
 \parindent=0mm
+% Náčrty
+%\usepackage{tikz}
 % Matematické symboly
 \usepackage{gensymb, amsmath, amssymb}
 % Diferenciální operátor
@@ -51,13 +57,26 @@
 \begin{titlepage}
 \pagecolor{fsimodra}
 \color{white}
-\title{Konstitutivní vztahy materiálu}
-\maketitle
-\nopagecolor
-\color{black}
+\renewcommand{\thepage}{Cover}
+\centering
+\bfseries
+{Ústav mechaniky těles, biomechaniky a~mechatroniky\\Fakulta strojního inženýrství\\Vysoké učení v~Brně\\}
+\vfill
+{\Huge KONSTITUTIVNÍ VZTAHY\\MATERIÁLŮ\\}
+\vfill
+{\LARGE prof. Dr. Ing. Jiří Burša}
+\vfill
+2019
 \end{titlepage}
 
+\clearpage
+\nopagecolor
+\color{black}
+\pagenumbering{roman}
+\tableofcontents
 
+\clearpage
+\pagenumbering{arabic}
 \chapter{Teorie elasticity}
 \input{Kapitoly/einsteinovo-scitaci-pravidlo}
 \input{Kapitoly/shear}
@@ -130,6 +149,6 @@
 \input{Kapitoly/johnson-cook-poruseni}
 
 \appendix
-\section*{Zkouškové otázky}
+\include{Kapitoly/zkouskove-otazky}
 
 \end{document}
