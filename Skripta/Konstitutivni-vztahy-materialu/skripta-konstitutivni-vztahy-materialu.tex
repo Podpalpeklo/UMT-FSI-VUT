@@ -37,8 +37,6 @@
 % Jednotky SI
 \usepackage{siunitx}
 \sisetup{output-decimal-marker = {,}}
-% Soubory PDF
-\usepackage[unicode=true,colorlinks=true,pdflang=cs,verbose=true]{hyperref}
 % Rozestupy odstavců
 \parskip=1ex
 % Odsazení odstavců
@@ -51,6 +49,9 @@
 \newcommand{\diff}{\,\mathrm{d}}
 % Číslování rovnic
 \numberwithin{equation}{part}
+% Soubory PDF
+\usepackage[unicode=true,colorlinks=false,verbose=true]{hyperref}
+\hypersetup{pdftitle={Konstitutivní vztahy materiálů},pdfauthor={prof. Dr. Ing. Jiří Burša},pdflang=cs}
 
 \begin{document}
 
@@ -64,9 +65,9 @@
 \vfill
 {\Huge KONSTITUTIVNÍ VZTAHY\\MATERIÁLŮ\\}
 \vfill
-{\LARGE prof. Dr. Ing. Jiří Burša}
+{\LARGE prof. Ing. Jiří Burša, Ph.D.}
 \vfill
-2019
+2018
 \end{titlepage}
 
 \clearpage
@@ -108,7 +109,7 @@
 \input{Kapitoly/idealni-plyn}
 \input{Kapitoly/idealni-kapalina}
 \input{Kapitoly/tenzor-napeti-idealni-kapaliny}
-\chapter{Konstitutivní modely\\elastického chování}
+\chapter{Modely elasticity}
 \input{Kapitoly/elasticita}
 \input{Kapitoly/hookeuv-zakon}
 \input{Kapitoly/zavislost-elastickych-konstant}
@@ -127,14 +128,14 @@
 \input{Kapitoly/bergstrom-boyce}
 \input{Kapitoly/error-function}
 \input{Kapitoly/anizotropni-modely}
-\chapter{Viskoelasticita}
+\chapter{Modely viskoelasticity}
 \input{Kapitoly/viskozita}
 \input{Kapitoly/newtonuv-zakon}
 \input{Kapitoly/gradient-rychlosti}
 \input{Kapitoly/viskoelasticita}
 \input{Kapitoly/komplexni-modul}
 \input{Kapitoly/visko-hyperelasticke-modely}
-\chapter{Plasticita}
+\chapter{Modely plasticity}
 \input{Kapitoly/plasticita}
 \input{Kapitoly/mohr-coulomb}
 \input{Kapitoly/drucker-prager}
