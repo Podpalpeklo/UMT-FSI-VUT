@@ -1,0 +1,26 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2017-09-19
+
+\subsection{Newtonův zákon viskozity}
+vyjadřuje lineární závislost mezi gradientem rychlosti a~smykovým napětím v~tekutině.
+Obvykle se uvádí ve tvaru:
+\begin{equation}
+	\bm{\tau} = \eta\, \nabla \bm{c},
+\end{equation}
+nebo též rozepsané na složky:
+\begin{equation}
+	\tau_{ij} = \eta \left(\begin{matrix}
+		\frac{\partial c_1}{\partial X_1} & \frac{\partial c_1}{\partial X_2} & \frac{\partial c_1}{\partial X_3}\\
+		\frac{\partial c_2}{\partial X_1} & \frac{\partial c_2}{\partial X_2} & \frac{\partial c_2}{\partial X_3}\\
+		\frac{\partial c_3}{\partial X_1} & \frac{\partial c_3}{\partial X_2} & \frac{\partial c_3}{\partial X_3}
+	\end{matrix}\right)
+\end{equation}
+kde
+\begin{description}
+	\item[{$\tau\:[\si{\pascal}]$}] je smykové napětí,
+	\item[{$\eta\:[\si{\pascal\second}]$}] je tzv. dynamická viskozita,
+	\item[{$\nabla \bm{c}\:[\si{\per\second}]$}] je gradient rychlosti tekutiny.
+\end{description}
+
+Kapaliny, jejichž chování lze popsat Newtonovým zákonem viskozity označujeme jako newtonské.
+Viskozita je jejich materiálovou charakteristikou, která je ovšem teplotně závislá.

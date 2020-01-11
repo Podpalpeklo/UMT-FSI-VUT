@@ -1,0 +1,36 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2006-11-05
+
+\subsection{Green-Lagrangeův tenzor konečných přetvoření}\label{sec:green-lagrange}
+Přetvoření (poměrná deformace) je rovněž vztažena k původním (nedeformovaným) rozměrům, ale je respektováno i natáčení elementu. Pak je délkové přetvoření (označení viz obrázek \ref{fig:pretvoreni}):
+\begin{equation}\begin{split}
+	E^L_x &= \frac{A'B' - AB}{AB}
+	= \frac{\sqrt{\diff x^2 + \left( \frac{\partial v}{\partial X} \diff X \right)^2 + \left( \frac{\partial w}{\partial X} \diff X \right)^2} - \diff X}{\diff X}\\
+	&= \frac{\sqrt{ \left( \diff X + u + \frac{\partial u}{\partial X} \diff X - u \right)^2 + \left( \frac{\partial v}{\partial X} \diff X \right)^2 + \left( \frac{\partial w}{\partial X} \diff X \right)^2} - \diff X}{\diff X}
+\end{split}\end{equation}
+
+Deformovaná délka elementu dx se zde počítá aplikací Pythagorovy věty ve 3D prostoru (není v obrázku zakresleno). Pro zjednodušení vztahu použijeme první dva členy binomické řady:
+\begin{equation}
+	\sqrt{1 + \kappa} = 1 + \frac{\kappa}{2} - \frac{\kappa^2}{8} + \frac{\kappa^3}{16} - \ldots
+\end{equation}
+Pak dostaneme:
+\begin{equation}\begin{split}
+	E^L_x
+	&= \frac{\diff X \sqrt{ 1 + 2 \frac{\partial u}{\partial X} + \left( \frac{\partial u}{\partial X} \right)^2 + \left( \frac{\partial v}{\partial X} \right)^2 + \left( \frac{\partial w}{\partial X} \right)^2} - \diff X}{\diff X}\\
+	&= 1 + \frac{2 \frac{\partial u}{\partial X} + \left( \frac{\partial u}{\partial X} \right)^2 + \left( \frac{\partial v}{\partial X} \right)^2 + \left( \frac{\partial w}{\partial X} \right)^2}{2} - 1\\
+	&= \frac{\partial u}{\partial X} + \frac{1}{2} \left[ \left( \frac{\partial u}{\partial X} \right)^2 + \left( \frac{\partial v}{\partial X} \right)^2 + \left( \frac{\partial w}{\partial X} \right)^2 \right]
+\end{split}\end{equation}
+Pro ostatní složky délkových přetvoření platí analogicky:
+\begin{equation}\begin{split}
+	E^L_y
+	&= \frac{\partial v}{\partial Y} + \frac{1}{2} \left[ \left( \frac{\partial u}{\partial Y} \right)^2 + \left( \frac{\partial v}{\partial Y} \right)^2 + \left( \frac{\partial w}{\partial Y} \right)^2 \right]\\
+	E^L_z
+	&= \frac{\partial w}{\partial Z} + \frac{1}{2} \left[ \left( \frac{\partial u}{\partial Z} \right)^2 + \left( \frac{\partial v}{\partial Z} \right)^2 + \left( \frac{\partial w}{\partial Z} \right)^2 \right]
+\end{split}\end{equation}
+
+Zobecnění na všechny složky tenzoru přetvoření je možné pomocí tenzorového zápisu
+\begin{equation}
+	E^L_{ij}
+	= \frac{1}{2} \left[ \frac{\partial u_i}{\partial X_j} + \frac{\partial u_j}{\partial X_i} + \frac{\partial u_k}{\partial X_j} \frac{\partial u_k}{\partial X_i} \right]
+\end{equation}
+Tento zápis používá Einsteinovo sčítací pravidlo.

@@ -1,0 +1,34 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2016-12-06
+
+\subsection{Konstitutivní modely pro viskoelastické materiály s~velkými deformacemi}
+Matematické formulace viskoelastických konstitutivních modelů respektujících velké deformace jsou analogické formulacím hyperelastickým. Protože se však jedná o stavy termodynamicky nerovnovážné, místo funkce měrné energie napjatosti se používá Helmholtzova volná energie
+\begin{equation}
+	\psi = U - TS,
+\end{equation}
+kde
+\begin{description}
+	\item[$T$] je absolutní teplota,
+	\item[$S$] je entropie.
+\end{description}
+Pro elastické materiály jsou obě energie totožné.
+
+Tato energie se vyjadřuje v~obecném tvaru:%todo co je na tom obecného, šak to jen rozdělil
+\begin{equation}
+	\psi = \psi_\text{vol}^\infty(J) + \psi_\text{iso}^\infty(\bar{C}) + \sum\limits_{\alpha=1}^m Y_\alpha(\bar{C}, \Gamma_\alpha)
+\end{equation}
+kde
+\begin{description}
+	\item[$\psi_\text{vol}^\infty$] je objemová složka Helmholtzovy volné energie,
+	\item[$\psi_\text{iso}^\infty$] je její izochorická (deviátorová) složka,
+	\item[$\bar{C}$] je deviátorová část pravého Cauchy-Greenova tenzoru deformace,
+	\item[$J$] je třetí invariant tenzoru deformačního gradientu,
+	\item[$Y_\alpha$] je množina funkcí popisujících nevratnou část Helmholtzovy volné energie,
+	\item[$\Gamma_\alpha$] je množina funkcí popisujících časovou závislost deformace.
+\end{description}
+
+Pro matematický popis lze využívat reologických modelů podobně jako u~lineární viskoelasticity, např. model \hyperref[sec:bergstrom-boyce]{Bergström-Boyce}. Podrobnosti lze nalézt např. v~níže uvedené literatuře.
+\footnote{Bergström JS, Boyce MC (1998):  Constitutive Modeling of the Large Strain Time-dependent Behavior of Elastomers, Journal of the Mechanics and Physics of Solids 45 (5), pp. 931-954.}
+\footnote{Bergström, J. S., Boyce, M. C. (2001): Constitutive Modeling of the Time-Dependent and Cyclic Loading of Elastomers and Application to Soft Biological Tissues, Mechanics of Materials 33, pp. 523-530.
+Simo, J.C., "On fully three-dimensional finite strain viscoelastic damage model: Formulation and computational aspects", Comput. Meth. In Appl. Mech. Eng., Vol. 60, pp. 153-173 (1987).}
+\footnote{G.A. Holzapfel, "On large strain viscoelasticity: continuum formulation and finite element applications to elastomeric structures", Int. J. Numer. Meth. Eng., Vol. 39, pp. 3903-3926 (1996).}

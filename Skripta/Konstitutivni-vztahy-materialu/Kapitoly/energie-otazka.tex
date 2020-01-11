@@ -1,0 +1,32 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2014-10-01
+
+\subsection{Vyhovuje hookovský materiál definici hyperelastických materiálů?}
+Funkce měrné energie napjatosti byla v~lineární PP odvozena např. pro jednoosou napjatost ve tvaru
+\begin{equation}
+	W = \frac{1}{2} \sigma_1:\varepsilon_1 = \frac{1}{2} \bm{\sigma}:\bm{\varepsilon}
+\end{equation}
+a~platí
+\begin{equation}
+	\bm{S} = \frac{\partial W}{\partial \bm{E}}.
+\end{equation}
+
+Derivace této energie napjatosti podle přetvoření (pro malé deformace definované libovolně, např. smluvního přetvoření $\varepsilon$) pak opravdu určuje odpovídající složku napětí (pro malé deformace opět podle libovolné definice tenzoru napětí), jak ukazuje následující výraz:
+\begin{equation}
+	S_{ij} = \frac{\partial W}{\partial E_{ij}}
+	= \frac{\partial W}{\partial \varepsilon}
+	= \frac{\partial \left(\frac{1}{2} \sigma \varepsilon\right)}{\partial \varepsilon}
+	= \frac{\partial \left(\frac{1}{2} E \varepsilon^2\right)}{\partial \varepsilon}
+	= \frac{2}{2} E \varepsilon = \sigma
+\end{equation}
+Lineárně elastický materiál je tedy jen zvláštním případem materiálu hyperelastického.
+Podobně lze vyjádřit napětí i~pro víceosou napjatost.
+
+\subsubsection{Energie napjatosti hookovského materiálu pro víceosou napjatost}
+Funkci měrné energie napjatosti odvozenou v~lineární PP pro jednoosou a~smykovou napjatost lze zobecnit do tvaru
+\begin{equation}
+	W = \frac{1}{2} \sigma_{ij} \varepsilon_{ij}.
+\end{equation}
+
+Při rozepsání tohoto vztahu do složek je třeba vzít v~úvahu, že podle \hyperref[sec:einsteinovo-scitaci-pravidlo]{Einsteinova pravidla} jsou oba indexy $i$ a~$j$ sčítací.
+Parciální derivace této energie napjatosti podle kterékoli složky přetvoření určuje odpovídající složku napětí.

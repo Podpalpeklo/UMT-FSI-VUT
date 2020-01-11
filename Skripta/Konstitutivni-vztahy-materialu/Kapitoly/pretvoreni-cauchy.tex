@@ -1,0 +1,31 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2016-10-10
+
+\subsection{Cauchyho (logaritmický) tenzor přetvoření}
+Nedostatky tenzorů konečných přetvoření:
+\begin{itemize}
+	\item Green-Lagrange: změny délek jsou stále vztahovány k~původním hodnotám, zatímco aktuální již mohou být v průběhu procesu zatěžování významně odlišné.
+	\item Almansi-Hamel: změny délek jsou stále vztahovány ke konečným (deformovaným) hodnotám délek, zatímco aktuální od nich mohou být v~průběhu procesu zatěžování ještě podstatně odlišné.
+\end{itemize}
+
+Cauchyho definice přetvoření je exaktnější v~tom, že infinitezimální přírůstek délky vztahuje vždy k~aktuální délce v~daném stádiu zatěžovacího procesu.
+
+Přetvoření úsečky o~původní délce $X_{i0}$, která se vlivem zatížení mění na aktuální hodnotu $X_i$ až dosáhne konečné (deformované) délky $x_{ik}$, určíme integrací přírůstků její délky $\diff x_i$:
+\begin{equation}
+	E^C_{ij}
+	= \int\limits_{X_{i0}}^{x_{ik}} \frac{1}{x_i} \diff x_i
+	= \left. \ln(x) \right\rvert_{X_{i0}}^{x_{ik}}
+	= \ln(x_{ik}) - \ln(X_{i0})
+	= \ln\left(\frac{x_{ik}}{X_{i0}}\right)
+	= \ln(\lambda_i)
+\end{equation}
+
+\subsubsection{Tenzorová formulace Cauchyho tenzoru přetvoření}
+
+Složky tohoto tenzoru jsou rovny přirozeným logaritmům odpovídajících složek tenzoru deformačního gradientu.
+
+
+Souřadnice tohoto tenzoru jsou tedy rovny přirozeným logaritmům odpovídajících souřadnic tenzoru deformačního gradientu.
+\begin{equation}
+	E^C_{ij} = \ln(F_{ij}) = \frac{1}{2} \ln(C_{ij})
+\end{equation}

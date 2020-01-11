@@ -1,0 +1,28 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2018-12-11
+
+\subsection{Model porušení Johnson-Cook}\label{sec:johnson-cook-poruseni}
+Tento model\footnote{Johnson G. R., Cook W. H. Fracture characteristics of three metals subjected to various strains, strain rates, temperatures and pressures. Engineering Fracture Mechanics, 1985, vol. 21, pp. 31-48.} plastického porušení podobně jako stejnojmenný viskoplastický model zohledňuje vliv rychlosti deformace a~teploty, navíc také triaxiality napětí $\eta$. Pro popis kumulace poškození zavádí parametr poškození $D$ ve tvaru
+\begin{equation}\label{parametr-poskozeni}
+	D = \sum \frac{\Delta \bar{\varepsilon}_p}{\bar{\varepsilon}_f(\eta, \dot{\varepsilon}^*, T^*)},
+\end{equation}
+kde
+\begin{description}
+	\item[$\Delta \bar{\varepsilon}_p$] je rozkmit redukovaného plastického přetvoření,
+	\item[$\bar{\varepsilon}_f$] je lomové přetvoření,
+	\item[$\dot{\varepsilon}^* = \tfrac{\dot{\bar{\varepsilon}}_p}{\dot{\bar{\varepsilon}}_0}$] je bezrozměrná rychlost redukovaného plastického přetvoření,
+	\item[$\dot{\bar{\varepsilon}}_p$] je rychlost redukovaného plastického přetvoření,
+	\item[$\dot{\bar{\varepsilon}}_0$] je referenční rychlost přetvoření, obvykle při tahové zkoušce,
+	\item[$T^* = \tfrac{T-T_0}{T_m-T_0}$] se nazývá homologická teplota, kde $T$, $T_m$, $T_0$ značí aktuální teplotu, teplotu tavení a~pokojovou teplotu $[\si{\kelvin}]$.
+\end{description}
+
+Pro lomové přetvoření $\bar{\varepsilon}_f$, které je funkcí triaxiality napětí $\eta$, rychlosti deformace a~teploty, model zavádí následující tvar:
+\begin{equation}
+	\bar{\varepsilon}_f = \left[ D_1 + D_2 \exp(D_3 \eta) \right] \left[ 1 + D_4 \ln(\dot{\varepsilon}^*) \right] \left[ 1 + D_5 T^* \right],
+\end{equation}
+kde $D_1$, $D_2$, $D_3$, $D_4$, a~$D_5$ jsou bezrozměrné parametry modelu.
+
+Porušení nastane, když parametr poškození dosáhne mezní (jednotkové) hodnoty $D=1$.
+
+Parametry modelu pro řadu materiálů lze nalézt~v:\\ 
+Johnson G. R., Holmquist T. J. Test data and computational strength and fracture model constants for 23 materials subjected to large strain, high strain rates, and high temperature. Los Alamos National Laboratory: Technical Report LA-11463-MS, 1989.

@@ -1,0 +1,28 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2010-03-16
+
+\subsection{Piola-Kirchhoffův tenzor napětí 2.~druhu}
+2.~Piola-Kirchhoffův (označovaný také jen jako Kirchhoffův) tenzor napětí je definován jako elementární síla $\diff F_{0i}$ vztažená na původní (tj. nedeformovanou) plochu elementu. Tato síla je však při přenášení na původní element změněna oproti skutečné síle $\diff F_i$ stejným poměrem jako elementární rozměr v~odpovídajícím směru. Ten se mění při zatížení podle vztahu
+\begin{equation}
+	\diff x_i = \frac{\partial x_i}{\partial X_i} \diff X_i,
+\end{equation}
+resp. při zpětné transformaci do nedeformovaného tvaru
+\begin{equation}
+	\diff X_i = \frac{\partial X_i}{\partial x_i} \diff x_i.
+\end{equation}
+
+Podobně transformujeme i~elementární sílu
+\begin{equation}
+	\diff F_{0i} = \frac{\partial X_i}{\partial x_i} \diff F_i,
+\end{equation}
+takže  napětí je
+\begin{equation}
+	S_i = \frac{\diff F_{0i}}{\diff X_j \diff X_k}
+\end{equation}
+Konkrétně pro normálové napětí ve směru 1 platí:
+\begin{equation}
+	S_i = \frac{\diff F_{01}}{\diff X_2 \diff X_3}
+	= \frac{\frac{\partial X_1}{\partial x_1} \diff F_1}{\diff X_2 \diff X_3}
+\end{equation}
+
+Tento tenzor nemá jasný fyzikální význam, používá se proto, že je i~pro velká přetvoření symetrický a~je energeticky konjugovaný s~Green-Lagrangeovým tenzorem přetvoření.

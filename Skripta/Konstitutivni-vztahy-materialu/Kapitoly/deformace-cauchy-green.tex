@@ -1,0 +1,79 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2017-10-19
+
+\subsection{Cauchy-Greenův tenzor deformace}
+Tato definice nepracuje s~přetvořeními, ale s~poměrnými protaženími, podobně jako tenzor deformačního gradientu $\bm{F}$, z~nějž se odvozuje pomocí vztahů:
+
+Pravý Cauchy-Greenův tenzor deformace
+\begin{equation}
+	\bm{C} = \bm{F}^T \bm{F}
+	\quad\Leftrightarrow\quad
+	C_{ij} = F_{ki} F_{kj}
+\end{equation}
+Levý Cauchy-Greenův tenzor deformace
+\begin{equation}
+	\bm{B} = \bm{F} \bm{F}^T
+	\quad\Leftrightarrow\quad
+	B_{ij} = F_{ik} F_{jk}
+\end{equation}
+
+Hlavními souřadnicemi tohoto tenzoru jsou kvadráty poměrných protažení v~hlavních směrech
+\begin{equation}
+	\bm{C} = \left(\begin{matrix}
+		\lambda_1^2 & 0 & 0\\
+		0 & \lambda_2^2 & 0\\
+		0 & 0 & \lambda_3^2
+	\end{matrix}\right)
+\end{equation}
+
+\subsubsection{Invarianty Cauchy-Greenova tenzoru deformace}
+Invarianty tohoto tenzoru lze v hlavním souřadnicovém systému vyjádřit následovně:
+\begin{align}
+	I_1 &= \lambda_1^2 + \lambda_2^2 + \lambda_3^2\\
+	I_2 &= \lambda_1^2 \lambda_2^2 + \lambda_2^2 \lambda_3^2 + \lambda_3^2 \lambda_1^2\\
+	I_3 &= \lambda_1^2 \lambda_2^2 \lambda_3^2 = J^2
+\end{align}
+
+Zde $J$ je třetí invariant tenzoru deformačního gradientu. Třetí invariant tedy i~u~Cauchy-Greenova tenzoru deformace vyjadřuje změnu objemu (je roven jedné, pokud se při deformaci objem nemění).
+
+Tenzorový zápis těchto invariantů je následující
+\footnote{*G.A.Holzapfel:Nonlinear solid mechanics. Wiley, 2001, p. 25.}
+\begin{align}
+	I_1 &= \mathrm{Sp}(\bm{C})%todo zarovnání
+	&\quad\Leftrightarrow\quad
+	I_1 &= C_{ii}\\
+	I_2 &= \frac{1}{2} \left[\mathrm{Sp}(\bm{C})^2 - \mathrm{Sp}(\bm{C}^2)\right]
+	&\quad\Leftrightarrow\quad
+	I_2 &= \frac{1}{2} (C_{ii} C_{jj} - C_{ij} C_{ji})\\
+	I_3 &= \det(\bm{C})
+\end{align}
+
+%\subsubsection{Modifikované invarianty Cauchy-Greenova tenzoru deformace}
+%Ve vztazích pro funkce měrné energie napjatosti se obvykle používají tzv. modifikované hodnoty hlavních poměrných protažení, které vyjadřují pouze tvarovou (deviátorovou) část tenzoru deformace, a~z~nich odvozené modifikované invarianty Cauchy-Greenova tenzoru deformace:
+%\begin{align}
+%	\bar{I}_1 &= \bar{\lambda}_1^2 + \bar{\lambda}_2^2 + \bar{\lambda}_3^2\\
+%	\bar{I}_2 &= \bar{\lambda}_1^2 \bar{\lambda}_2^2 +\bar{ \lambda}_2^2 \bar{\lambda}_3^2 + \bar{\lambda}_3^2 \bar{\lambda_1}^2\\
+%	I_3 &= \bar{\lambda}_1^2 \bar{\lambda}_2^2 \bar{\lambda}_3^2 = 1
+%\end{align}
+
+\subsubsection{Modifikované invarianty Cauchy-Greenova tenzoru deformace}
+Modifikované (též někdy označované jako redukované) invarianty Cauchy-Greenova tenzoru deformace se ve vztazích pro funkce měrné energie napjatosti používají pro popis deviátorové složky deformace. Tak jako deviátor tenzoru malých přetvoření vznikl odečtením středního přetvoření od jednotlivých složek délkových přetvoření, zde dostaneme příslušná poměrná protažení dělením jednotlivých složek středním protažením $\lambda_s$. 
+
+Pak dostaneme modifikovaná hlavní protažení z~rovnice
+\begin{equation}
+\bar{\lambda}_p = J^{-\frac{1}{3}} \lambda_p \quad (p = 1,2,3)
+\end{equation}
+
+Modifikované invarianty Cauchy-Greenova tenzoru deformace jsou pak dány
+\begin{align}
+\bar{I}_1
+&= \bar{\lambda}_1^2 + \bar{\lambda}_2^2 + \bar{\lambda}_3^2
+= \left(\lambda_1^2 + \lambda_2^2 + \lambda_3^2\right) J^{-\frac{2}{3}}
+= I_1 J^{-\frac{2}{3}}
+= I_1 I_3^{-\frac{1}{3}}\\
+\bar{I}_2
+&= \bar{\lambda}_1^2 \bar{\lambda}_2^2 + \bar{\lambda}_2^2 \bar{\lambda}_3^2 + \bar{\lambda}_1^2 \bar{\lambda}_3^2
+= \left(\lambda_1^2 \lambda_2^2 + \lambda_2^2 \lambda_3^2 + \lambda_1^2 \lambda_3^2\right) J^{-\frac{4}{3}}
+= I_2 J^{-\frac{4}{3}}
+= I_2 I_3^{-\frac{2}{3}}
+\end{align}

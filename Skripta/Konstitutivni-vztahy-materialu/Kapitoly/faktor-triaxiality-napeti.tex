@@ -1,0 +1,49 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2018-12-11
+
+\subsection{Faktor triaxiality napětí}
+Střední napětí (hydrostatická -- kulová) složka tenzoru napětí nemá významný vliv na mez kluzu, ale má značný vliv na tvárné porušení. Jeho normalizovaná hodnota se nazývá faktor triaxiality napětí.
+
+Faktor triaxiality napětí $\eta$ je rozhodující pro přechod od tvárného ke křehkému porušení a objevuje se spolu s~Lodeho parametrem v~některých mezních podmínkách, resp. konstitutivních modelech. Je dán poměrem kulové a~deviátorové části tenzoru napětí, konkrétně středního a~Misesova napětí, podle vztahu:
+\begin{equation}
+	\eta = \frac{\sigma_s}{\sigma_\text{HMH}},
+\end{equation}
+kde
+\begin{description}
+	\item[$\sigma_s$] je střední napětí, reprezentující kulovou (hydrostatická) složku napjatosti,
+	\item[$\sigma_\text{HMH}$] je redukované napětí podle Misesovy podmínky plasticity (deviátorová složka napjatosti).
+\end{description}
+
+Z~vlastností uvedených složek napětí plyne, že $\eta$ je nulové pro smykovou napjatost (nulová střední složka napětí, čistý deviátor) a~dosahuje extrémních hodnot $+\infty/-\infty$ pro rovnoměrnou trojosou napjatost v~tahu (tlaku). 
+
+Změní-li se znaménko všech složek napětí, nezmění se velikost triaxiality, ale změní se jen znaménko faktoru triaxiality napětí.
+
+\begin{figure}[H]\centering\begin{tabular}{lll}\toprule
+	Název & $\eta$ & Hlavní napětí\\ \midrule
+	Smyková & $0$ & $\sigma_3 = -\sigma_1; \sigma_2 = 0$\\
+	Dvouosá s~opačnými znam. hl. napětí & $0< \eta < \tfrac{1}{3}$ & $0 < |\sigma_3| = -\sigma_3 < \sigma_1; \sigma_2 = 0$\\%todo Tady by měl být středník?
+	Jednoosá tahová & $\eta = \tfrac{1}{3}$ & $\sigma_1 > 0; \sigma_2 = \sigma_3 = 0$\\
+	Dvouosá tahová nerovnoměrná & $\tfrac{1}{3} < \eta < \tfrac{2}{3}$ & $0 < \sigma_2 < \sigma_1; \sigma_3 = 0$\\
+	Dvouosá tahová rovnoměrná & $\eta = \tfrac{2}{3}$ & $\sigma_1 = \sigma_2 > 0; \sigma_3 = 0$\\
+	Trojosá tahová polorovnoměrná & $\eta > \tfrac{2}{3}$ & $0 < \sigma_3 < \sigma_1 = \sigma_2$\\
+	Trojosá tahová polorovnoměrná & $\eta = 1$ & $0 < \sigma_1 = \sigma_2; \sigma_3 = \tfrac{\sigma_1}{4}$\\
+	Trojosá tahová polorovnoměrná & $\eta = \tfrac{10}{6} \approx 1\!,67$ & $0 < \sigma_1 = \sigma_2; \sigma_3 = \tfrac{\sigma_1}{2}$\\
+	Trojosá tahová rovnoměrná & $\eta \rightarrow \infty$ & $\sigma_1 = \sigma_2 = \sigma_3 > 0$\\
+\bottomrule\end{tabular}
+\caption{Závislost součinitele triaxiality napětí $\eta$ na typu napjatosti}
+\end{figure}
+
+\begin{figure}[H]\centering\begin{tabular}{lll}\toprule
+	Název & $\eta$ & Hlavní napětí\\ \midrule
+	Smyková & $0$ & $\sigma_3 = -\sigma_1; \sigma_2 = 0$\\
+	Dvouosá s opačnými znam. hl.  napětí & $0 > \eta > -\tfrac{1}{3}$ & $\sigma_1 < |\sigma_3|; \sigma_2 = 0; \sigma_3 < 0$\\
+	Jednoosá tlaková & $\eta= -\tfrac{1}{3}$ & $\sigma_1 = \sigma_2 = 0; \sigma_3 < 0$\\
+	Dvouosá tlaková nerovnoměrná & $-\tfrac{1}{3} > \eta > -\tfrac{2}{3}$ & $\sigma_1 = 0; \sigma_3 < \sigma_2 < 0$\\
+	Dvouosá tlaková rovnoměrná & $\eta = -\tfrac{2}{3}$ & $\sigma_1 = 0; \sigma_2 = \sigma_3 < 0$\\
+	Trojosá tlaková polorovnoměrná & $\eta < -\tfrac{2}{3}$ & $0 > \sigma_1 > \sigma_2 = \sigma_3$\\
+	Trojosá tlaková polorovnoměrná & $\eta = -1$ & $\sigma_1 = \tfrac{\sigma_3}{4}; \sigma_2 = \sigma_3 < 0$\\
+	Trojosá tlaková polorovnoměrná & $\eta= -\tfrac{10}{6} \approx -1\!,67$ & $\sigma_1 = \tfrac{\sigma_3}{2}; \sigma_2 = \sigma_3 < 0$\\
+	Trojosá tlaková rovnoměrná & $\eta \rightarrow -\infty$ & $\sigma_1 = \sigma_2 = \sigma_3 < 0$\\
+\bottomrule\end{tabular}
+\caption{Závislost součinitele triaxiality napětí $\eta$ na typu napjatosti (tlakové)}
+\end{figure}

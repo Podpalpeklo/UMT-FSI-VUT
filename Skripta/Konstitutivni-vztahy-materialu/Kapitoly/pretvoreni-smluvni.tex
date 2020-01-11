@@ -1,0 +1,47 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2006-11-05
+
+\subsection{Smluvní přetvoření (pro malé deformace)}
+Délková (označení viz obrázek \ref{fig:pretvoreni}):
+\begin{equation}
+	\varepsilon_x
+	= \frac{\diff x - \diff X}{\diff X}
+	= \frac{\diff X + u + \frac{\partial u}{\partial X}\diff X - u - \diff X}{\diff X}
+	= \frac{\partial u}{\partial X}
+\end{equation}
+
+Pro ostatní složky analogicky:
+\begin{equation}
+	\varepsilon_x
+	= \frac{\partial v}{\partial Y}
+	\qquad
+	\varepsilon_z
+	= \frac{\partial w}{\partial Z}
+\end{equation}
+
+Úhlová (zkosy):
+\begin{equation}
+	\gamma_{xy}
+	= \gamma_{AB} + \gamma_{AC}
+	= \tan(\gamma_{AB}) + \tan(\gamma_{AB})
+	= \frac{\frac{\partial v}{\partial X} \diff X}{\diff X}
+	+ \frac{\frac{\partial u}{\partial Y} \diff Y}{\diff Y}
+	= \frac{\partial v}{\partial X} + \frac{\partial u}{\partial Y}
+\end{equation}
+
+Pro ostatní složky analogicky:
+\begin{equation}
+	\gamma_{yz}
+	= \frac{\partial v}{\partial Z} + \frac{\partial w}{\partial Y}
+	\qquad
+	\gamma_{xz}
+	= \frac{\partial u}{\partial Z} + \frac{\partial w}{\partial X}
+\end{equation}
+
+Vzhledem k tomu, že složkami tenzoru přetvoření jsou poloviční zkosy, lze napsat obecný tenzorový vztah
+\begin{equation}
+	\bm{\varepsilon} := \tfrac{1}{2} \left( \nabla\bm{u} + \nabla^T\bm{u} \right)
+	\quad\Leftrightarrow\quad
+	\varepsilon_{ij} := \frac{1}{2} \left( \frac{\partial u_i}{\partial X_j} + \frac{\partial u_j}{\partial X_i} \right),
+\end{equation}
+kde souřadnicím $X$, $Y$, $Z$ odpovídají $X_i$ a~posuvům $u$, $v$, $w$ posuvy $u_i$ (pro $i=1,2,3$).

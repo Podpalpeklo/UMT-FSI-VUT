@@ -1,0 +1,85 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2018-11-20
+
+\subsection{Anizotropní hyperelastické modely}\label{sec:anizotropni-hyperelasticke-modely}
+Používají se pro popis chování vláknových kompozitů s~elastomerovou matricí (nejčastěji guma) vyztuženou vlákny.
+V~základní verzi předpokládají rovnoměrné rozložení maximálně dvou osnov rovnoběžných vláken s~nulovou ohybovou tuhostí.
+Předpokládají tedy nekonečně malý průměr vláken, prakticky se dají použít pro vlákna textilní nebo kovová ve formě splétaného lanka.
+Pro vlákna s~významnou ohybovou tuhostí (například ocelové dráty v běhounové vrstvě některých pneumatik) jsou potřebné složitější konstitutivní modely (např. založené na Cosseratově teorii elasticity).
+
+Pro matematický popis příspěvku vláken k~měrné energii napjatosti kompozitu používají další invarianty deformačního tenzoru. Obvykle se používají invarianty (nazývané také „pseudoinvarianty“) pravého Cauchy-Greenova tenzoru deformace $\bm{C}$, označované symboly $I_4$--$I_9$ v~jeho modifikované podobě, tedy popisující pouze deviátorovou složku deformace.
+
+Podobně jako u~izotropních elastomerů se měrná energie skládá z~části objemové $W_\text{vol}$ a~části deviátorové (izovolumické) $W_\text{dev}$, která se dá dále rozložit na izotropní příspěvek matrice $W_\text{iso}$ a~anizotropní příspěvek vláken $W_\text{aniso}$.
+\begin{equation}
+	W = W_\text{vol}(J) + W_\text{dev}(\bm{C},\bm{A},\bm{B}) = W_\text{vol}(J) + W_\text{iso}(\bm{C}) + W_\text{aniso}(\bm{C},\bm{A},\bm{B}).
+\end{equation}
+
+Pro izotropní část energie napjatosti $W_\text{iso}$ lze použít kterýkoli adekvátní model (\hyperref[sec:neo-hooke]{neo-Hooke}, \hyperref[sec:mooney-rivlin]{Mooney-Rivlin}, \ldots), pro anizotropní část $W_\text{aniso}$ se zavádějí nejčastěji modely polynomické, příp. exponenciální (pro měkké biologické tkáně). $\bm{A}$ a~$\bm{B}$ zde představují takzvané „strukturní tenzory“ definující směry dvou osnov vláken.
+
+\subsubsection{Polynomický anizotropní hyperelastický model}\label{sec:polynomicky-anizotropni-hyperelasticky-model}
+Tento model je naprogramován v~ANSYSu v následujícím tvaru:
+\begin{equation}
+	W = W_\text{dev} + \frac{1}{d} \left(J-1\right)^2
+\end{equation}
+
+Pro objemovou část energie napjatosti je zde použit model formulovaný pro izotropní matrici, zatímco deviátorová část měrné energie napjatosti $W_\text{dev}$ je popsána takto:
+\begin{equation}\begin{split}
+	W_\text{dev}(\bar{\bm{C}},\bm{A},\bm{B})
+	= &\sum\limits_{i=1}^3 \left(\bar{I}_1 - 3\right)^i
+	+ \sum\limits_{j=1}^3 \left(\bar{I}_2 - 3\right)^j
+	+ \sum\limits_{k=1}^6 \left(\bar{I}_4 - 3\right)^k\\
+	+ &\sum\limits_{l=1}^6 \left(\bar{I}_5 - 3\right)^l
+	+ \sum\limits_{m=1}^6 \left(\bar{I}_6 - 3\right)^m
+	+ \sum\limits_{n=1}^6 \left(\bar{I}_7 - 3\right)^n
+	+ \sum\limits_{o=1}^6 \left(\bar{I}_8 - 3\right)^o,
+\end{split}\end{equation}
+kde
+\begin{description}
+	\item[$a_i, b_j$] jsou materiálové parametry izotropní části (matrice) $W_\text{iso}$,
+	\item[$c_k, d_l, e_m, f_n, g_o$] jsou materiálové parametry anizotropní části (vláken) $W_\text{aniso}$,
+	\item[$\bar{I}_1, \bar{I}_2$] jsou redukované invarianty pravého Cauchy-Greenova tenzoru deformace $\bm{C}$,
+	\item[$\bar{I}_4, \bar{I}_5, \bar{I}_6, \bar{I}_7, \bar{I}_8, \bar{I}_9$] jsou pseudoinvarianty deformačního tenzoru $\bm{C}$ a~strukturních tenzorů $\bm{A}$ a~$\bm{B}$, zatímco $I_9$ je jen konstanta zajišťující nulovou energii v~nedeformovaném stavu.
+\end{description}
+
+Model kromě prvních dvou členů využívá pouze sudé mocniny invariantů, takže zahrnuje ve své deviátorové části celkem 21 materiálových parametrů.
+
+\subsubsection{Zjednodušení polynomického modelu}
+Pro praktické použití je třeba zvolit jednodušší verzi modelu, aby se daly z~experimentu určit jeho parametry.
+Nejjednodušší formulaci dostaneme, pokud pro izotropní část (matrici) použijeme model \hyperref[sec:neo-hooke]{neo-Hooke} (obvykle akceptovatelný, protože  vlákna neumožňují extrémně velké deformace) a~pro obě osnovy vláken zvolíme jednoparametrickou formulaci:
+\begin{equation}
+	W_\text{dev}(\bar{\bm{C}},\bm{A},\bm{B})
+	= a_1 \left(\bar{I}_1 - 3\right)
+	+ c_1 \left(\bar{I}_4 - 3\right)^2
+	+ e_1 \left(\bar{I}_6 - 3\right)^2
+\end{equation}
+
+Ještě jednodušší forma modelu existuje pro jednosměrový kompozit, tedy s~jedinou osnovou vláken; pak poslední člen uvedené rovnice vypadne. Jsou-li naopak obě osnovy vláken identické co do tuhosti vláken a~jejich obsahu v~materiálu (včetně rozložení po tloušťce, které je ovšem předpokládáno ideálně rovnoměrné), pak platí $e_1 = c_1$ a~model má rovněž jen 2 materiálové parametry, jeden pro matrici a~druhý pro vlákna.
+
+Poznámka 1: Model je často formulován jako nestlačitelný, pak se redukované invarianty shodují s~neredukovanými a~v~jejich označení chybí pruh nad $I$.
+
+Poznámka 2: První mocninu invariantů $\bar{I}_4$ a~$\bar{I}_6$ nelze ve funkci používat, protože pro záporné deformace vláken (v~tlaku, tj. $\lambda < 1$) by dávala zápornou deformační energii.
+
+\subsubsection{Model HGO (Holzapfel)}\label{sec:model-hgo}
+Jedná se o~anizotropní exponenciální model
+\footnote{Holzapfel, Gasser,Ogden: A~new constitutive framework for arterial wall mechanics, Journal of Elasticity, 2000}
+určený pro měkké biologické tkáně (např. cévní) vyztužené dvěma osnovami identických zvlněných vláken.
+\begin{equation}
+	W(\bar{I}_1, \bar{I}_4, \bar{I}_6, J) = \frac{c}{2} (\bar{I}_1 - 3)
+	+ W_\text{aniso}(\bar{I}_4, \bar{I}_6)
+	+ \frac{1}{d} (J - 1)^2
+\end{equation}
+
+Pro (izotropní) matrici je zde použit model \hyperref[sec:neo-hooke]{neo-Hooke} v~její objemové i~deviátorové části, zatímco anizotropní část měrné energie napjatosti $W_\text{aniso}$ se mění podle znaménka příslušných invariantů; vzhledem ke zvlnění výztužných vláken se tato uplatní jen tehdy, jsou-li vlákna namáhána v tahu. Matematická formulace je tedy následující:
+\begin{equation}
+	W_\text{aniso}(\bar{I}_4, \bar{I}_6) = \begin{cases}
+		\frac{k_1}{2 k_2} \sum\limits_{i=4,6} \left\{ \exp\left[ k_2 \left( \bar{I}_i - 1 \right)^2 \right] - 1 \right\} & \text{pro} \bar{I}_4 > 1, \bar{I}_6 > 1\\
+		\frac{k_1}{2 k_2} \left\{ \exp\left[ k_2 \left( \bar{I}_4 - 1 \right)^2 \right] - 1 \right\} & \text{pro} \bar{I}_4 > 1, \bar{I}_6 < 1\\
+		\frac{k_1}{2 k_2} \left\{ \exp\left[ k_2 \left( \bar{I}_6 - 1 \right)^2 \right] - 1 \right\} & \text{pro} \bar{I}_4 < 1, \bar{I}_6 > 1\\
+		0 & \text{pro} \bar{I}_4 < 1, \bar{I}_6 < 1\\
+	\end{cases}
+\end{equation}
+kde
+\begin{description}
+	\item[$c, k_1, k_2, d$] jsou materiálové parametry,
+	\item[$\bar{I}_1, \bar{I}_4, \bar{I}_6$] jsou redukované invarianty pravého Cauchy-Greenova tenzoru deformace.
+\end{description}

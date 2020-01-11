@@ -1,0 +1,35 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2010-03-16
+
+\subsection{Vzájemné přepočtové vztahy pro tenzory napětí}
+Nejvhodnější pro vzájemný přepočet tenzorů přetvoření jsou poměrná protažení $\lambda_i$, tedy složky tenzoru deformačního gradientu. V~hlavním souřadnicovém systému platí následující vztahy:
+
+Hlavní Cauchyho (skutečné) napětí lze vyjádřit pomocí 1.P.K. napětí
+\begin{equation}
+	\sigma_i = \frac{\diff F_i}{\diff x_j \diff x_k}
+	= \frac{\diff F_i}{\lambda_j \diff X_j \lambda_k \diff X_k}
+	= \frac{\tau_i}{\lambda_j \lambda_k}
+\end{equation}
+
+Pro nestlačitelný materiál platí $\lambda_i\lambda_j\lambda_k=1$ a~tedy napětí jsou ve vztahu
+\begin{equation}
+	\sigma_i = \frac{\tau_i}{\lambda_j \lambda_k} = \tau_i \lambda_i
+\end{equation}
+
+Podobně lze vyjádřit 2.P.K. napětí
+\begin{equation}
+	S_i = \frac{\diff F_{0i}}{\diff X_j \diff X_k}
+	= \frac{\frac{\partial X_i}{\partial x_i} \diff F_i}{\diff X_j \diff X_k}
+	= \frac{\frac{1}{\lambda_i} \diff F_i}{\diff X_j \diff X_k}
+	= \frac{1}{\lambda_i} \tau_i
+\end{equation}
+
+Cauchyho napětí lze vyjádřit i~pomocí 2.P.K. napětí
+\begin{equation}
+	\sigma_i = \frac{\tau_i}{\lambda_j \lambda_k}
+	= \frac{\lambda_i}{\lambda_j \lambda_k} S_i,
+\end{equation}
+nebo jednodušeji pro nestlačitelný materiál
+\begin{equation}
+	\sigma_i = \lambda_i \tau_i = \lambda_i^2 S_i.
+\end{equation}

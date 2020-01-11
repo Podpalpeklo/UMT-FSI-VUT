@@ -1,17 +1,135 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = cs_CZ
-\documentclass[a4paper, 10pt, draft]{report}
+\documentclass[a4paper, 10pt, oneside, draft]{report}
+
+% Oprava vykopírovávání diakritiky
+\usepackage[resetfonts]{cmap}
+% Kódování písem
+\usepackage[T1]{fontenc}
+% Kódování dokumentu
 \usepackage[utf8]{inputenc}
+% Jazyk čeština
 \usepackage[czech]{babel}
-\usepackage{graphicx}
-\usepackage{lmodern}
+% Geometrie stránky
 \usepackage[top=3cm, left=2cm, bottom=3cm, right=2cm]{geometry}
+% Obrázky
+\usepackage{graphicx}
+% Složka s obrázky
+\graphicspath{{./Obrazky/}}
+% Písmo Latin Modern
+\usepackage{lmodern}
+% Barvy
+\usepackage[rgb]{xcolor}
+\definecolor{fsimodra}{RGB}{0,79,113}
+\definecolor{fsimodra}{cmyk}{1,0.27,0.1,0.56}
+% Uvozovky
+\usepackage{csquotes}
+% Tabulky
+\usepackage{booktabs}
+% Plovoucí prostředí
+\usepackage{float}
+% Tučný font
+\usepackage{bm}
+% Jednotky SI
+\usepackage{siunitx}
+\sisetup{output-decimal-marker = {,}, separate-uncertainty = true}
+% Soubory PDF
+\usepackage[unicode=true,colorlinks=true,pdflang=cs,pdfcreator=LaTeX,verbose=true]{hyperref}
+% Rozestupy odstavců
+\parskip=1ex
+% Odsazení odstavců
+\parindent=0mm
+% Matematické symboly
+\usepackage{gensymb, amsmath, amssymb}
+% Diferenciální operátor
+\newcommand{\diff}{\,\mathrm{d}}
+% Číslování rovnic
+\numberwithin{equation}{part}
 
 \begin{document}
 
 \begin{titlepage}
+\pagecolor{fsimodra}
+\color{white}
 \title{Konstitutivní vztahy materiálu}
 \maketitle
+\nopagecolor
+\color{black}
 \end{titlepage}
+
+
+\chapter{Teorie elasticity}
+\input{Kapitoly/einsteinovo-scitaci-pravidlo}
+\input{Kapitoly/shear}
+\input{Kapitoly/konecne-deformace}
+\input{Kapitoly/deformovane-souradnice}
+\input{Kapitoly/deformace-cauchy-green}
+\input{Kapitoly/deformacni-gradient}
+\input{Kapitoly/stretch-tensor}
+\input{Kapitoly/pretvoreni-obrazek}
+\input{Kapitoly/pretvoreni-smluvni}
+\input{Kapitoly/pretvoreni-green-lagrange}
+\input{Kapitoly/pretvoreni-almansi}
+\input{Kapitoly/pretvoreni-cauchy}
+\input{Kapitoly/pretvoreni-prepocty}
+\input{Kapitoly/napeti-cauchy}
+\input{Kapitoly/napeti-1-piola-kirchhoff}
+\input{Kapitoly/napeti-2-piola-kirchhoff}
+\input{Kapitoly/napeti-prepocty}
+\input{Kapitoly/energeticky-konjugovane-tenzory}
+%\input{Kapitoly/modifikovane-invarianty}
+\input{Kapitoly/pseudoinvarianty}
+\chapter{Konstitutivní modely}
+\input{Kapitoly/konstitutivni-modely}
+\input{Kapitoly/prehled-konstitutivnich-modelu}
+\input{Kapitoly/integralni-popis}
+\input{Kapitoly/mises}
+\input{Kapitoly/mises-pretvoreni}
+\input{Kapitoly/stavova-rovnice}
+\input{Kapitoly/idealni-plyn}
+\input{Kapitoly/idealni-kapalina}
+\input{Kapitoly/tenzor-napeti-idealni-kapaliny}
+\chapter{Konstitutivní modely\\elastického chování}
+\input{Kapitoly/elasticita}
+\input{Kapitoly/hookeuv-zakon}
+\input{Kapitoly/zavislost-elastickych-konstant}
+\input{Kapitoly/entropicka-elasticita}
+\input{Kapitoly/hyperelasticita}
+\input{Kapitoly/energie-otazka}
+\input{Kapitoly/zkousky-elastomeru}
+\input{Kapitoly/neo-hooke}
+\input{Kapitoly/mooney-rivlin}
+\input{Kapitoly/yeoh}
+\input{Kapitoly/arruda-boyce}
+\input{Kapitoly/predikce}
+\input{Kapitoly/foam}
+\input{Kapitoly/neelasticke-efekty}
+\input{Kapitoly/ogden-roxburgh}
+\input{Kapitoly/bergstrom-boyce}
+\input{Kapitoly/error-function}
+\input{Kapitoly/anizotropni-modely}
+\chapter{Viskoelasticita}
+\input{Kapitoly/viskozita}
+\input{Kapitoly/newtonuv-zakon}
+\input{Kapitoly/gradient-rychlosti}
+\input{Kapitoly/viskoelasticita}
+\input{Kapitoly/komplexni-modul}
+\input{Kapitoly/visko-hyperelasticke-modely}
+\chapter{Plasticita}
+\input{Kapitoly/plasticita}
+\input{Kapitoly/mohr-coulomb}
+\input{Kapitoly/drucker-prager}
+\input{Kapitoly/ramberg-osgood}
+\input{Kapitoly/lode}
+\input{Kapitoly/faktor-triaxiality-napeti}
+\input{Kapitoly/voce4}
+\input{Kapitoly/johnson-cook-plasticita}
+\input{Kapitoly/norton}
+\input{Kapitoly/chaboche}
+\input{Kapitoly/bai-wierzbicki}
+\input{Kapitoly/johnson-cook-poruseni}
+
+\appendix
+\section*{Zkouškové otázky}
 
 \end{document}

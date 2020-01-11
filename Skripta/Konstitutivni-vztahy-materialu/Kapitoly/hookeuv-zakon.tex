@@ -1,0 +1,54 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2016-12-14
+
+\subsection{Upravený tvar Hookova zákona}\label{sec:hookeuv-zakon}
+Vztahy vyjadřující vzájemnou závislost elastických konstant izotropního hookovského materiálu
+\begin{align}
+G &= \frac{E}{2 (1+\mu)}\\
+K &= \frac{E}{3 (1 - 2\mu)}\\
+\lambda &= \frac{E \mu}{(1 + \mu)(1 - 2\mu)} = K - \frac{2}{3} G
+\end{align}
+
+Vyjdeme ze tvaru s~explicitně vyjádřenými napětími (viz PPII)
+\begin{equation}\begin{split}
+\sigma_1
+&= 2 G \varepsilon_1 + \lambda (\varepsilon_1 + \varepsilon_2 + \varepsilon_3) =
+2 G \varepsilon_1 + \left(K - \frac{2}{3} G\right)\left(\varepsilon_1 + \varepsilon_2 + \varepsilon_3\right)\\
+&= 2 G \left(\varepsilon_1 - \frac{\varepsilon_1 + \varepsilon_2 + \varepsilon_3}{3}\right) + K \left(\varepsilon_1 + \varepsilon_2 + \varepsilon_3\right) =
+2 G D_{\varepsilon_1} + K e
+\end{split}\end{equation}
+
+\subsection{Hookův zákon v tenzorovém tvaru}
+Složkové rovnice Hookova zákona
+\begin{align}
+\sigma_1 &= 2 G D_{\varepsilon_1} + K e\\
+\sigma_2 &= 2 G D_{\varepsilon_2} + K e\\
+\sigma_3 &= 2 G D_{\varepsilon_3} + K e\\
+\tau_{12} &= G \gamma_{12} = 2 G D_{\varepsilon_{12}}\\
+\tau_{23} &= G \gamma_{23} = 2 G D_{\varepsilon_{23}}\\
+\tau_{31} &= G \gamma_{13} = 2 G D_{\varepsilon_{13}}
+\end{align}%todo opravit zápis
+
+Deviátor tenzoru přetvoření
+\begin{equation}
+D_\varepsilon = \left( \begin{matrix}
+\varepsilon_1 - \varepsilon_s & \frac{\gamma_{12}}{2} & \frac{\gamma_{13}}{2}\\
+\frac{\gamma_{21}}{2} & \varepsilon_2 - \varepsilon_s & \frac{\gamma_{23}}{2}\\
+\frac{\gamma_{13}}{2} & \frac{\gamma_{23}}{2} & \varepsilon_3 - \varepsilon_s
+\end{matrix} \right)
+\end{equation}
+
+Obecný zápis Hookova zákona
+\begin{equation}
+\sigma_{ij} = 2 G D_{s_{ij}} + \delta_{ij} K e
+\end{equation}
+kde $\delta_{ij}$ je Kroneckerův symbol.
+\begin{equation}
+\delta_{ij} = 1 \forall i = j \quad a \quad \delta_{ij} = 0 \forall i \neq j
+\end{equation}
+
+Analogický zápis Newtonova zákona
+\begin{equation}
+\sigma_{ij} = 2 \eta \dot{D}_{s_{ij}} + \delta_{ij} \kappa \dot{e}
+\end{equation}
+kde $\kappa\:[Pa.s]$ je objemová („druhá“) viskozita

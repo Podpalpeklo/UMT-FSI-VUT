@@ -1,0 +1,23 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2018-11-20
+
+\subsection{(Pseudo)invarianty pravého Cauchy-Greenova tenzoru deformace}
+Vztahují se pouze k~deviátorové složce měrné energie napjatosti materiálu, protože vzhledem k~předpokladu nulového průměru vláken a~tedy jejich nulovému objemu nemohou vlákna ovlivňovat volumetrickou složku energie napjatosti.
+Byly zavedeny pro popis deformace vláken v~závislosti na pravém Cauchy-Greenově deformačním tenzoru a~směrových vektorech $\bm{a}$ nebo $\bm{b}$, příp. směrových tenzorech (nazývaných  také „structural tensors“) $\bm{A}$ nebo $\bm{B}$ vláken, definovaných vztahem:
+\begin{equation*}
+\bm{A} = \bm{a} \otimes \bm{a}
+\quad\Leftrightarrow\quad
+A_{ij} = a_i a_j
+\end{equation*}
+
+Samotné (pseudo)invarianty jsou definovány následujícími vztahy:
+\begin{align*}
+\bar{I}_4 &= \bar{\bm{C}} : \bm{A} = \bm{a} \cdot \bar{\bm{C}} \bm{a} \quad&\Leftrightarrow\quad \bar{I}_4 &= a_i \bar{C}_{ij} a_j\\
+\bar{I}_5 &= \bar{\bm{C}}^2 : \bm{A} = \bm{a} \cdot \bar{\bm{C}}^2 \bm{a} \quad&\Leftrightarrow\quad \bar{I}_5 &= a_i \bar{C}_{ij}^2 a_j\\
+\bar{I}_6 &= \bar{\bm{C}} : \bm{B} = \bm{b} \cdot \bar{\bm{C}} \bm{b} \quad&\Leftrightarrow\quad \bar{I}_6 &= b_i \bar{C}_{ij} b_j\\
+\bar{I}_7 &= \bar{\bm{C}}^2 : \bm{B} = \bm{b} \cdot \bar{\bm{C}}^2 \bm{b} \quad&\Leftrightarrow\quad \bar{I}_7 &= b_i \bar{C}_{ij}^2 b_j\\
+\bar{I}_8 &= (\bm{a} \cdot \bm{b}) \bm{a} \cdot \bm{C} \bm{b} \quad&\Leftrightarrow\quad \bar{I}_8 &= (a_k b_k) a_i \bar{C}_{ij} b_j\\
+\bar{I}_9 &= \zeta = (\bm{a} \cdot \bm{b})^2 \quad&\Leftrightarrow\quad \bar{I}_9 &= (a_i b_i)^2
+\end{align*}
+
+Dá se ukázat, že invarianty $\bar{I}_4$ a~$\bar{I}_6$ vyjadřují protažení jednotlivých osnov výztužných vláken, podobně jako invarianty vyššího stupně $\bar{I}_5$ a $\bar{I}_7$, zatímco $\bar{I}_8$ se vztahuje ke vzájemnému ovlivnění obou osnov vláken a $\bar{I}_9$ je pouze geometrická konstanta.

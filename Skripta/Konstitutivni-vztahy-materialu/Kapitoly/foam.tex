@@ -1,0 +1,36 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2018-11-07
+
+\subsection{Model Blatz-Ko pro pěnové pryže}\label{sec:blatz-ko}
+Tento model navržený pro pěnové pryže zavádí měrnou energii napjatosti ve tvaru
+\begin{equation}
+	W = \frac{G}{2} \left( \frac{I_2}{I_3} + 2 \sqrt{I_3} - 5 \right),
+\end{equation}
+kde
+\begin{description}
+	\item[$G$] je modul pružnosti ve smyku,
+	\item[$I_2, I_3$] jsou invarianty pravého Cauchy-Greenova tenzoru deformace.
+\end{description}
+
+\subsection{Model Ogden pro pěnové pryže}\label{sec:ogden-foam}
+Tento model zavádí energii napjatosti ve tvaru
+\begin{equation}
+	W
+	= \sum\limits_{i=1}^N \frac{\mu_i}{\alpha_i} \left( \bar{\lambda}_1^{\alpha_i} + \bar{\lambda}_2^{\alpha_i} + \bar{\lambda}_3^{\alpha_i} - 3 \right)
+	+ \sum\limits_{i=1}^N \frac{\mu_i}{\beta_i} \left(1 - J^{\beta_i}\right),
+\end{equation}
+nebo pro velmi stlačitelné elastomery svazuje objemovou a~deviátorovou část energie napjatosti vztahem (použit v~ANSYSu)
+\begin{equation}
+	W
+	= \sum\limits_{i=1}^N \frac{\mu_i}{\alpha_i} \left[ J^{\frac{\alpha_i}{3}} \left( \bar{\lambda}_1^{\alpha_i} + \bar{\lambda}_2^{\alpha_i} + \bar{\lambda}_3^{\alpha_i} \right) - 3 \right]
+	+ \sum\limits_{i=1}^N \frac{\mu_i}{\alpha_i \beta_i} \left(J^{-\alpha_i \beta_i} - 1\right),
+\end{equation}
+kde
+\begin{description}
+	\item[$\mu_i, \alpha_i, \beta_i$] jsou materiálové parametry,
+	\item[$\bar{\lambda}_i (i=1,2,3)$] = modifikovaná hlavní poměrná protažení,
+	\item[$J$] je třetí invariant tenzoru deformačního gradientu.
+\end{description}
+
+Model je použitelný jen v~tlaku, ne v~tahu (u~pěny se nepředpokládá).
+Pro $\beta_i = 0$ dostaneme nestlačitelný model \hyperref[sec:model-ogden]{Ogden}.

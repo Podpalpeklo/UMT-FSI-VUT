@@ -1,0 +1,39 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2014-11-13
+
+\subsection{Tenzor protažení (stretch tensor)}
+I~v~nedeformovaném stavu elementu může mít matice definující tenzor deformačního gradientu $\bm{F}$ složky odlišné od jednotkové matice; je to dáno případnou rotací elementu v~důsledku velkých deformací tělesa.  Polární dekompozicí tenzoru $\bm{F}$ lze tento rozložit na tenzor rotace $\bm{R}$ (vyjadřující rotaci tuhého tělesa) a~tenzor protažení $\bm{U}$ (popisující deformaci tělesa). Tento tenzor již je symetrický a~energeticky konjugovaný se symetrickou částí $\bm{T_B}$.
+
+Tenzor deformačního gradientu je definován vztahem
+\begin{equation}
+	F_{ij} = \frac{\partial x_i}{\partial X_j}
+\end{equation}
+který můžeme přepsat do maticové podoby s~konečnými diferencemi namísto derivací
+\begin{equation}
+	\bm{F} = \frac{\Delta \bm{x}}{\Delta \bm{X}}
+\end{equation}
+
+Polární dekompozice tenzoru $\bm{F}$ pak spočívá v~jeho rozložení na tenzor 
+rotace $\bm{R}$ a~tenzor protažení (stretch tensor) $\bm{U}$:
+\begin{equation}
+	\bm{F} = \bm{R} \bm{U}
+\end{equation}
+
+Tenzor rotace $\bm{R}$ je v rovině (2D zjednodušení) definován vztahem
+\begin{equation}
+	\bm{R} = \left(\begin{matrix}
+		\cos(\psi) & \sin(\psi)\\
+		-\sin(\psi) & \cos(\psi)\\
+	\end{matrix}\right),
+\end{equation}
+kde úhel $\psi$ lze určit ze složek tenzoru deformačního gradientu pomocí vztahu
+\begin{equation}
+	\psi = \arctan\left(\frac{F_{12} - F_{21}}{F_{11} + F_{22}}\right)
+\end{equation}
+
+Pak lze tenzor protažení $\bm{U}$ určit ze vztahu
+\begin{equation}
+	\bm{U} = \bm{R}^{-1} \bm{F} = \bm{R}^T \bm{F}
+\end{equation}
+
+využívajícího ortogonality tenzoru rotace $\bm{R}$, pro který tedy inverzní matice se rovná matici transponované. Hlavní složky tenzoru $\bm{U}$ jsou hlavní poměrná protažení; tento tenzor je vždy symetrický na rozdíl od tenzoru deformačního gradientu $\bm{F}$.

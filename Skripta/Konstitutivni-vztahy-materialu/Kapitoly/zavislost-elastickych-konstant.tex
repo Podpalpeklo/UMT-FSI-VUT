@@ -1,0 +1,58 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2016-02-10
+
+\subsection{Závislost elastických konstant}
+Vztahy pro modul pružnosti ve smyku a~Lamého konstantu $\lambda$ byly odvozeny v~PPII přímo ve tvarech
+\begin{align}
+	G &= \frac{E}{2(1+\mu)}\\
+	\lambda &= \frac{E \mu}{(1+\mu) (1-2\mu)}
+\end{align}
+
+Modul objemové pružnosti je definován podobně jako v~hydromechanice
+\begin{equation}
+	K = \frac{\sigma_s}{e},
+\end{equation}
+kde
+\begin{itemize}
+	\item[$\sigma_s$] je střední napětí,
+	\item[$e$] je poměrná změna objemu.
+\end{itemize}
+
+Pro tyto veličiny byly v~PPII odvozeny vztahy
+\begin{align}
+	\sigma_s &= \frac{\sigma_1 + \sigma_2 + \sigma_3}{3},\\
+	e &= \varepsilon_1 + \varepsilon_2 + \varepsilon_3,
+\end{align}
+do nichž dosadíme z Hookova zákona a~dostaneme:
+\begin{equation}\begin{split}
+	e
+	&= \varepsilon_1 + \varepsilon_2 + \varepsilon_3
+	= \frac{1}{E} \left[\sigma_1 - \mu(\sigma_2 + \sigma_3)\right]
+	+ \frac{1}{E} \left[\sigma_2 - \mu(\sigma_1 + \sigma_3)\right]
+	+ \frac{1}{E} \left[\sigma_3 - \mu(\sigma_1 + \sigma_2)\right]\\
+	&= \frac{1}{E} \left[\sigma_1 (1-2\mu) + \sigma_2 (1-2\mu) + \sigma_3 (1-2\mu)\right]
+	= \frac{1-2\mu}{E} \left(\sigma_1 + \sigma_2 + \sigma_3\right)
+\end{split}\end{equation}
+
+Dosazením do definičního vztahu pro $K$ dostaneme
+\begin{equation}
+	K
+	= \frac{\sigma_s}{e}
+	= \frac{\frac{\sigma_1 + \sigma_2 + \sigma_3}{3}}{\frac{(1-2\mu) (\sigma_1 + \sigma_2 + \sigma_3)}{E}}
+	= \frac{E}{3 (1-2\mu)}
+\end{equation}
+
+Hookův zákon potřebujeme vyjádřit pomocí konstant, které mají analogii v~hydromechanice, tedy pomocí $K$ a~$G$.
+Tak vyjádříme i~Lamého konstantu $\lambda$
+\begin{equation}
+	\lambda
+	= \frac{E \mu}{(1+\mu) (1-2\mu)} \frac{3}{3}
+	= \frac{E(1+\mu) - E(1-2\mu)}{3 (1+\mu) (1-2\mu)}
+	= \frac{E}{3(1-2\mu)} - \frac{E}{3(1+\mu)} \frac{2}{2}.
+	= K - \frac{2}{3} G
+\end{equation}
+
+Obráceně, pokud známe $K$ a~$G$, tedy moduly pro objemovou a~deviátorovou část deformace, můžeme dopočítat Poissonovo číslo $\mu$ (které dává obvyklou představu o~stlačitelnosti materiálu) ze vztahu
+\begin{equation}
+	\mu = \frac{3K - 2G}{6K + 2G}.
+\end{equation}

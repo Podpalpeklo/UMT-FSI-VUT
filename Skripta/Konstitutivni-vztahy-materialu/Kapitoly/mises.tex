@@ -1,0 +1,145 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2018-12-10
+
+\subsection{Misesova mezní podmínka energetická formulace}
+Ekvivalentní napětí podle von Misese je v~kurzu PP na FSI v Brně odvozováno jako podmínka plasticity (HMH), založená na velikosti oktaedrického smykového napětí.
+Ke stejné podmínce lze však dospět i~na základě energetického přístupu, kdy mezní stav (plasticity nebo pevnosti, podmínka je používána i~jako pevnostní kriterium) nastane tehdy, když měrná deformační energie změny tvaru (deviátorová) dosáhne jisté mezní hodnoty, která je materiálovou charakteristikou.
+Ve velkých deformacích je ekvivalentní napětí skalární hodnotou Cauchyho tenzoru (skutečného) napětí.
+
+V~jednoosé napjatosti je měrná deformační energie
+\begin{equation}
+	w_e = \frac{\diff W_e}{\diff V} = \int\limits_0^\varepsilon \sigma \diff \varepsilon
+\end{equation}
+a~pro lineárně elastický materiál se dá zjednodušit do tvaru
+\begin{equation}
+	w_e = \frac{1}{2} \sigma \varepsilon = \frac{\sigma^2}{2 E} = \frac{1}{2} E \varepsilon^2
+\end{equation}
+
+Pro víceosou napjatost je třeba do deformační energie zahrnout příspěvek všech složek tenzorů napětí a~přetvoření. Přitom složky s~nestejnými indexy spolu svírají pravý úhel, takže jejich příspěvek k~deformační práci je nulový.
+
+Měrnou energii lze tedy zapsat ve tvaru:
+\begin{equation}\begin{split}
+	w_e
+	= &\int\limits_{0}^{\varepsilon_{11}} \sigma_{11} \diff \varepsilon_{11}
+	+ \int\limits_{0}^{\varepsilon_{12}} \sigma_{12} \diff \varepsilon_{12}
+	+ \int\limits_{0}^{\varepsilon_{13}} \sigma_{13} \diff \varepsilon_{13}
+	+ \int\limits_{0}^{\varepsilon_{21}} \sigma_{21} \diff \varepsilon_{21}\\
+	+ &\int\limits_{0}^{\varepsilon_{22}} \sigma_{22} \diff \varepsilon_{22}
+	+ \int\limits_{0}^{\varepsilon_{23}} \sigma_{23} \diff \varepsilon_{23}
+	+ \int\limits_{0}^{\varepsilon_{31}} \sigma_{31} \diff \varepsilon_{31}
+	+ \int\limits_{0}^{\varepsilon_{32}} \sigma_{32} \diff \varepsilon_{32}
+	+ \int\limits_{0}^{\varepsilon_{33}} \sigma_{33} \diff \varepsilon_{33}
+\end{split}\end{equation}
+
+Tenzorovým zápisem lze zjednodušit do tvaru
+\begin{equation}
+	w_e
+	= \int\limits_{0}^{\bm{\varepsilon}} \bm{\sigma} \!:\! \bm{\varepsilon} 
+	\:\Leftrightarrow\: \int\limits_{0}^{\varepsilon_{ij}} \sigma_{ij} \diff \varepsilon_{ij},
+\end{equation}
+kde $\bm{\sigma}$ a~$\bm{\varepsilon}$ jsou tenzory druhého řádu a~v~indexovém zápisu platí Einsteinovo sčítací pravidlo.
+
+Použijeme-li ve vztahu rozklad tenzorů napětí a~deformace na jejich kulové a~deviátorové složky, dostaneme měrnou energii napjatosti následovně:
+\begin{equation}\begin{split}%todo už nepoužíváme index e?
+	w
+	= &\int\limits_0^{\bm{\varepsilon}} \left(\bm{\sigma}' + \frac{\mathrm{Sp}(\bm{\sigma})}{3}\bm{1}\right)
+	\!:\! \left(\diff \bm{\varepsilon}' + \frac{\mathrm{Sp}(\diff \bm{\varepsilon})}{3}\bm{1}\right)\\
+	= &\int\limits_0^{\bm{\varepsilon}'} \bm{\sigma}' \!:\! \diff \bm{\varepsilon}'
+	+ \int\limits_0^{\bm{\varepsilon}} \left( \frac{\mathrm{Sp}(\bm{\sigma})}{3}\bm{1} \right) \!:\! \left( \frac{\mathrm{Sp}(\diff \bm{\varepsilon})}{3}\bm{1} \right)
+	= w_d + w_V,
+\end{split}\end{equation}
+kde čárka v~horním indexu značí deviátorovou složku tenzoru.
+
+Měrná energie napjatosti tedy sestává z~části deviátorové $w_d$ (energie změny tvaru) a~objemové $w_V$ (energie změny objemu).
+
+Misesova podmínka vychází z deviátorové části energie napjatosti $w_d$ (dané změnou tvaru), kterou lze tedy zapsat následovně:
+\begin{equation}
+	w_d = \int\limits_0^{\bm{\varepsilon}'} \bm{\sigma}' \!:\! \diff \bm{\varepsilon}' \:\Leftrightarrow\: \int\limits_0^{\varepsilon'_{ij}} \sigma'_{ij} \diff \varepsilon'_{ij}
+\end{equation}
+
+Použijeme-li pro lineárně elastický materiál Hookeův zákon s~oddělenou tvarovou a~objemovou složkou, platí:
+\begin{equation}
+	\sigma_{ij}
+	= 2 G \varepsilon_{ij} + \lambda \varepsilon_{ii}
+	= 2 G \varepsilon'_{ij} + K \varepsilon_{ii}
+\end{equation}
+a~tedy pro deviátorové složky napětí a~přetvoření
+\begin{equation}
+	\sigma'_{ij} = 2 G \varepsilon'_{ij}
+\end{equation}
+nebo inverzní tvar pro hodnotu nebo přírůstek deviátoru deformace
+\begin{equation}
+	\varepsilon'_{ij} = \frac{\sigma'_{ij}}{2 G} \qquad
+	\diff\varepsilon'_{ij} = \frac{\diff \sigma'_{ij}}{2 G}
+\end{equation}
+Pak lze měrnou energii tvarové změny vyjádřit pomocí pouze napětí anebo pomocí přetvoření následovně:
+\begin{equation}
+	w_d
+	= \int\limits_0^{\varepsilon'_{ij}} \sigma'_{ij} \diff \varepsilon'_{ij}
+	= \frac{1}{2} \sigma'_{ij} \varepsilon'_{ij}
+	= \frac{1}{4 G} \sigma'_{ij} \sigma'_{ij}
+	= G \varepsilon'_{ij} \varepsilon'_{ij}
+	= G \bm{\varepsilon}' \!:\! \bm{\varepsilon}'
+\end{equation}
+
+Zavede-li se redukované napětí vztahem
+\begin{equation}
+	\sigma_\text{ekv}^2
+	= \frac{3}{2} (\bm{\sigma}' \!:\! \bm{\sigma}')
+	\:\Leftrightarrow\: \sigma_{ij}' \sigma_{ij}',
+\end{equation}
+pak lze deviátorovou část energie napjatosti $w_d$ zapsat následovně:
+\begin{equation}
+	w_d = \frac{\sigma_\text{ekv}^2}{6 G}.
+\end{equation}
+
+Zavede-li se podobně redukované přetvoření podle Misesovy podmínky, lze energii vyjádřit také s~jeho použitím
+\begin{equation}
+	w_d
+	= \frac{2}{3} G (1+\mu)^2 \varepsilon_\text{ekv}^2
+	= \frac{E (1+\mu)}{3} \varepsilon_\text{ekv}^2.
+\end{equation}
+
+\subsubsection{Misesova mezní podmínka jako izotropní zjednodušení podmínky Tsai-Hill pro kompozity}
+Misesova energetická podmínka je obecně používána i~jako podmínka pevnosti u~technických i~biologických materiálů.
+Nejsnadněji lze shodu obou přístupů ukázat pomocí energetické podmínky Tsai-Hill uváděné\footnote{Agarval, Broutman: Vláknové kompozity. SNTL Praha, 1987} pro vláknové kompozity ve tvaru
+\begin{equation}
+	\left(\frac{\sigma_L}{\sigma_{PL}}\right)^2
+	- \frac{\sigma_L}{\sigma_{PL}} \frac{\sigma_T}{\sigma_{PT}}
+	+ \left(\frac{\sigma_T}{\sigma_{PT}}\right)^2
+	+ \left(\frac{\tau_{LT}}{\tau_P}\right)^2 < 1,
+\end{equation}
+kde indexy $L$, $T$ označují hlavní směry materiálu a~index $P$ pevnost v~daném směru.
+
+Po zjednodušení na materiál izotropní ($\sigma_{PL}= \sigma_{PT} = \sigma_P$) a~zavedení pevnosti ve smyku podle Misesovy podmínky ve tvaru
+\begin{equation}
+	\tau_P = \frac{\sigma_P}{\sqrt{3}},
+\end{equation}
+převedeme výše uvedenou nerovnici na tvar
+\begin{equation}
+	\left(\frac{\sigma_L}{\sigma_{PL}}\right)^2
+	- \frac{\sigma_L \sigma_P}{\sigma_P^2}
+	+ \left(\frac{\sigma_T}{\sigma_P}\right)^2
+	+ \left(\frac{\sqrt{3} \tau_{LT}}{\sigma_P}\right)^2 < 1.
+\end{equation}
+
+Výsledný tvar podmínky (platný pro rovinnou napjatost) pak je
+\begin{equation}\label{tsai-hill-kompozit}
+	\sqrt{\sigma_L^2 - \sigma_L\sigma_T + \sigma_T^2 + 3\tau_{LT}^2} < \sigma_P.
+\end{equation}
+
+Redukované (ekvivalentní) napětí podle Misesovy podmínky (HMH) se pro obecný souřadnicový systém obvykle uvádí ve tvaru\footnote{Janíček, Ondráček Vrbka, Burša: Mechanika těles -- Pružnost a pevnost I. CERM Brno, 2006.}
+\begin{equation}
+	\sigma_\text{red}
+	= \sqrt{\frac{1}{2} \bigg[ (\sigma_L-\sigma_T)^2 + (\sigma_L-\sigma_{T'})^2 + (\sigma_T-\sigma_{T'})^2 + 6 \left( \tau_{LT}^2 + \tau_{LT'}^2 + \tau_{TT'}^2 \right) \bigg]},
+\end{equation}
+kde označení os $x$, $y$, $z$ bylo pouze změněno na $L$, $T$, $T'$.
+Pro dvouosou napjatost v~rovině $LT$ pak dostáváme tvar
+\begin{equation}
+	\sigma_\text{red} = \sqrt{\sigma_L^2 - \sigma_L\sigma_T + \sigma_T^2 + 3\tau_{LT}^2},
+\end{equation}
+z~nějž porovnáním s~rovnicí (\ref{tsai-hill-kompozit}) plyne obvyklý tvar mezní podmínky
+\begin{equation}
+	\sigma_\text{red} < \sigma_P,
+\end{equation}
+který se od obvyklé Misesovy podmínky plasticity liší jen použitou mezní hodnotou.

@@ -1,0 +1,116 @@
+% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX lastmodified = 2018-09-25
+
+\section{Konstitutivní modely}
+
+\subsection{Co jsou konstitutivní modely?}
+Už v~PPI a~PPII byly uvedeny základní (lineární) konstitutivní vztahy pro modelování závislostí mezi deformací a napětím.
+Tyto závislosti jsou dány vlastnostmi materiálu, které byly vytvořeny (konstituovány) přírodou, stvořitelem.
+V~širším smyslu se k~nim v~mechanice kontinua počítají závislosti mezi dalšími veličinami odvozenými z~napětí a~přetvoření, souvisejícími se závislostí na čase, např. rychlostí deformace.
+Jejich matematický popis, ať už lineární nebo nelineární, musí být nutně do jisté míry zjednodušený, proto se pro něj používá označení konstitutivní vztahy nebo konstitutivní modely.
+
+\framebox[\linewidth]{Konstitutivní model je tedy matematický, příp. grafický popis konstitutivní závislosti.}
+
+Konstitutivní závislosti (v mechanice) jsou příčinné závislosti mezi tenzory napětí a~přetvoření, příp. s~nimi matematicky souvisejícími veličinami, s uvažováním časových závislostí.
+
+\subsection{Příklady konstitutivních modelů}
+
+S~jakými konstitutivními modely jsme se již setkali? 
+\begin{itemize}
+	\item Ideálně tuhý materiál
+	\item Lineárně elastický materiál (izotropní nebo anizotropní -- vláknové kompozity) -- Hookův zákon
+	\item Elasticko-plastický materiál (ideálně, tj. bez zpevnění, anebo se zpevněním)
+	\item Tuho-plastický materiál
+\end{itemize}
+
+Jaké další modely budou probírány v předmětu „Konstitutivní vztahy materiálu“?
+\begin{itemize}
+	\item Viskoelastické modely materiálu (napětí a~deformace jsou mj. funkcí času) s~malými deformacemi i~s~velkými deformacemi (visko-hyperelastické)
+	\item Hyperelastické modely materiálu  (materiál vykazující velká elastická přetvoření) izotropní a~anizotropní
+	\item Elasticko-plastické modely materiálu
+	\item Modely porušení
+\end{itemize}
+
+\subsection{Existují konstitutivní modely tekutin?}
+\begin{itemize}
+	\item Ideální kapalina
+	\item Newtonská kapalina
+	\item Nenewtonské kapaliny -- mezi smykovým napětím a~rychlostí deformace platí jiné závislosti než proporcionální
+	\item Ideální plyn
+	\item Viskózní plyn
+\end{itemize}
+
+Tyto modely předpokládají jistou formu závislosti mezi napětími a~rychlostí tvarových změn (přetvoření), proto je lze také zahrnout mezi konstitutivní modely.
+
+\subsection{Rozdělení konstitutivních modelů}
+Je užitečné zavést následující rozdělení kostitutivních modelů podle jejich složitosti: 
+\begin{itemize}
+	\item Základní konstitutivní modely -- sem řadíme nejjednodušší kostitutvní modely, definující ideální látku v jejích základních skupenstvích -- ideální tuhou látku, ideální kapalinu a~ideální plyn.
+	\item Jednoduché konstitutivní modely -- Pod tímto pojmem jsou chápány ty konstitutivní modely, které popisují chování látek, jež se od  „ideálních“ odlišují určitou jedinou vlastností, např. ideálně elastická látka, ideálně plastická látka, viskózní (newtonská) kapalina.
+	\item Kombinované konstitutivní modely – Jsou to modely, které vzniknou kombinací dvou nebo vícero jednoduchých konstitutivních modelů. Využívají mj. tzv. reologických modelů k~popisu chování např. těchto druhů látek: viskoelastických, elasticko-plastických, viskoplastických a~elasticko-viskoplastických.
+\end{itemize}
+
+Konstitutivních modelů existuje velké množství.
+Aspoň částečný přehled o~nich, včetně vzájemných souvislostí, poskytuje schéma konstitutivních modelů.
+
+\subsection{Charakteristiky základních konstitutivních modelů}
+\begin{itemize}
+	\item Ideálně tuhá látka
+	\begin{itemize}
+		\item nekonečně velký odpor proti deformaci
+		\item deformace je pro daný problém nepodstatná
+	\end{itemize}
+	\item Ideální kapalina
+	\begin{itemize}
+		\item nulový odpor proti změně tvaru (nulová viskozita)
+		\item nekonečně velký odpor proti změně objemu (nestlačitelnost)
+	\end{itemize}
+	\item Ideální plyn
+	\begin{itemize}
+		\item nulový odpor proti změně tvaru
+		\item malý odpor proti změně objemu, daný stavovou rovnicí ideálního plynu
+	\end{itemize}
+\end{itemize}
+
+Závěr: Pro vzájemné odlišení látek v~různých skupenstvích je nutné oddělovat objemovou a~tvarovou složku deformace.
+
+\subsection{Rozlišování mezi objemovou a tvarovou složkou deformace}
+U~konstitutivních modelů je obecně třeba oddělovat objemovou a~tvarovou složku deformace.
+
+Tak tomu je např. i~u~plasticity -- podle podmínek plasticity je trvalá deformace dána pouze deviátorem tenzoru napětí, kulová část tenzoru napětí není schopna vyvolat trvalou deformaci.
+Jediným konstitutivním vztahem, který toto rozdělení nemusí dodržovat, je Hookův zákon (díky platnosti principu superpozice pro lineární závislosti).
+
+Tenzory přetvoření a+napětí je tedy třeba rozdělit takto:
+\begin{itemize}
+	\item Tenzor přetvoření = volumetrická (kulová) část + deviátor tenzoru přetvoření
+	\item Tenzor napětí = kulový tenzor napětí + deviátor tenzoru napětí
+\end{itemize}
+
+\subsection{Typy závislostí vyjadřujících chování látek}
+Chování látek z~pohledu mechaniky je komplexně popsáno těmito závislostmi: 
+\begin{itemize}
+	\item deformačně-napěťová odezva -- konstitutivní závislost v~užším slova smyslu -- je závislost mezi tenzorem napětí a~tenzorem přetvoření (nutnost použití tenzorového, resp. maticového počtu). Z~praktických důvodů se často používají zjednodušené tvary tohoto vyjádření, platné pouze pro specifické případy napjatosti (jednoosá, dvojosá rovnoměrná, smyková, trojosá rovnoměrná).
+	\item Creepová odezva -- Je to závislost deformace na čase, označovaná jako tečení (creep). Obvykle se vyšetřuje při statickém zatížení vyvolávajícím jednoosou napjatost danou napětím:
+	\begin{equation}
+		\sigma = \sigma_0 H(t),
+		\quad\text{případně}\quad
+		\sigma = \sigma_0 H(t) - \sigma_0 H(t-t_0),
+	\end{equation}
+	kde $H(t)$ je Heavisideova funkce, pro níž platí:
+	\begin{equation}
+		H = 0 \quad\text{pro}\quad t < 0,
+		H = 1 \quad\text{pro}\quad t \geq 0.
+	\end{equation}
+	\item Relaxační odezva -- Je to závislost napětí na čase. Relaxační odezva se obvykle vyšetřuje při stavu deformace daném přetvořením:
+	\begin{equation}
+		\varepsilon = \varepsilon_0 H(t),
+		\quad\text{resp.}\quad
+		\varepsilon = \varepsilon_0 H(t) - \varepsilon_0 H(t - t_0),
+	\end{equation}
+	kde $H(t)$ je stejná Heavisideova funkce.
+	\item Rychlostní odezva -- U~látek, které vykazují časovou závislost deformačně-napěťové odezvy na zatížení se uvádí i~závislost napětí $\sigma$ na rychlosti deformace $\dot{\varepsilon}$ (tedy $\sigma-\dot{\varepsilon}$).
+\end{itemize}
+
+
+
+
