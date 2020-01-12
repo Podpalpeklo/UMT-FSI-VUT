@@ -1,41 +1,21 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-11-20
-
-\subsection{Entropická elasticita}
-Při teplotě absolutní nuly jakékoli vlákno (řetězec, makromolekula) zaujímá tvar minimalizující jeho energii, což odpovídá přímému prutu, pokud rozhodující veličinou je celková deformační energie včetně energie vynaložené na ohybovou deformaci vlákna $W_\text{bend}$
-\begin{equation}
-	W_\text{bend} = \left(\frac{K_f}{2}\right) \int\limits_0^L \left(\frac{\partial t}{\partial s}\right)^2 \diff s,
-\end{equation}
-kde
-\begin{description}
-	\item[$K_f = EJ$] je ohybová tuhost vlákna,
-	\item[$\diff s$] element délky vlákna (křivočarý),
-	\item[$L$] (contour length) je celková křivočará délka vlákna (rovná vzdálenosti jeho konců v napřímeném tvaru),
-	\item[$\tfrac{\partial t}{\partial s}$] je rychlost změny tečného vektoru podél délky~$s$ vlákna (lokální křivost).
-\end{description}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics{entropicka-elasticita}
-	\caption{Entropická elasticita}
-	\label{fig:entropicka-elasticita}
-\end{figure}
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-11-06
 
 \subsubsection{Entropie}
 Entropie $S$ je mírou pravděpodobnosti daného stavu; v~termodynamice vratných dějů je definována následovně:
 \begin{equation}
-	\diff S := \frac{\diff Q}{T}
+\diff S := \frac{\diff Q}{T}
 \end{equation}
 
 Pro makromolekulární řetězec je entropie definována pomocí maximálního počtu dosažitelných (tvarových) konfigurací:
 \begin{equation}
-	S := \ln\left(\text{maximální počet možných konfigurací}\right)
+S := \ln\left(\text{maximální počet možných konfigurací}\right)
 \end{equation}
 
 S~rostoucí entropií určitého tvaru tedy roste pravděpodobnost, že se tento tvar řetězce reálně vyskytne.
 Pak pravděpodobnost $P(E)$, že vlákno s~určitou energií $W_\text{bend}$ se vyskytne právě v~určité specifické konfiguraci (tvaru), lze vyjádřit vztahem
 \begin{equation}
-	P(E) = \exp\left(-\frac{W_\text{bend}}{k_B T}\right),
+P(E) = \exp\left(-\frac{W_\text{bend}}{k_B T}\right),
 \end{equation}
 kde pravá strana vyjadřuje Boltzmannův faktor\footnote{Fung, YC, 1993}\footnote{Boal, MC, 2002}.
 
@@ -71,6 +51,36 @@ kde
 Pro izotermický děj odpovídá minimalizace volné energie spontánnímu procesu, tj. $\Delta G < 0$ s~nárůstem entropie.
 Je-li však vlákno natahováno, klesá počet možných konfigurací (na jedinou v~plně napřímené konfiguraci), tedy klesá i~entropie, což odpovídá procesu nespontánnímu, tj. $\Delta G > 0$.
 \footnote{[2] Boal, MC, 2002; [3] Sean, E, 2010; [6] Mofrad , CM, 2006; [15] Mucke, JMB, 2004}
+
+\subsection{Entropická elasticita}
+Při teplotě absolutní nuly jakékoli vlákno (řetězec, makromolekula) zaujímá tvar minimalizující jeho energii, což odpovídá přímému prutu, pokud rozhodující veličinou je celková deformační energie včetně energie vynaložené na ohybovou deformaci vlákna $W_\text{bend}$
+\begin{equation}
+	W_\text{bend}
+	= \frac{K_f}{2} \int\limits_0^L \frac{1}{R^2} \diff s
+	= \frac{K_f}{2} \left( \frac{1}{2} \int\limits_0^L \left(\frac{\partial t}{\partial s}\right)^2 \diff s \right)
+	= K_f A,
+\end{equation}
+kde
+\begin{description}
+	\item[$K_f = EJ$] je ohybová tuhost vlákna,
+	\item[$\diff s$] element délky vlákna (křivočarý),
+	\item[$L$] (contour length) je celková křivočará délka vlákna (v~napřímeném tvaru rovná vzdálenosti jeho konců),
+	\item[$\tfrac{\partial t}{\partial s}$] je rychlost změny tečného vektoru podél délky~$s$ vlákna (lokální křivost $\frac{1}{R}$).
+\end{description}
+
+\begin{equation}
+	P(E)
+	= \exp\left(-\frac{W_\text{bend}}{k_B T}\right)
+	= \exp\left(-\frac{K_f A}{k_B T}\right),
+\end{equation}
+kde pro malé $K_f$ jde energie k~nule nezávisle na hodnotě integrálu $A$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{entropicka-elasticita}
+	\caption{Entropická elasticita}
+	\label{fig:entropicka-elasticita}
+\end{figure}
 
 \subsubsection{Perzistentní délka -- délka stálosti tvaru}
 Při nenulové absolutní teplotě $T$ dochází k~ohybu přímé tyče vlivem výměny energie s~okolím (u~molekul Brownův pohyb).
