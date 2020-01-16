@@ -1,5 +1,5 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2014-10-01
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-04-01
 
 \subsection{Vyhovuje hookovský materiál definici hyperelastických materiálů?}
 Funkce měrné energie napjatosti byla v~lineární PP odvozena např. pro jednoosou napjatost ve tvaru
@@ -7,11 +7,11 @@ Funkce měrné energie napjatosti byla v~lineární PP odvozena např. pro jedno
 	W = \frac{1}{2} \sigma_1:\varepsilon_1 = \frac{1}{2} \bm{\sigma}:\bm{\varepsilon}
 \end{equation}
 a~platí
-\begin{equation}
+\begin{equation}\label{eq:saint-venant-stress}
 	\bm{S} = \frac{\partial W}{\partial \bm{E}}.
 \end{equation}
 
-Derivace této energie napjatosti podle přetvoření (pro malé deformace definované libovolně, např. smluvního přetvoření $\varepsilon$) pak opravdu určuje odpovídající složku napětí (pro malé deformace opět podle libovolné definice tenzoru napětí), jak ukazuje následující výraz:
+Podle rovnice (\ref{eq:saint-venant-stress}) pak derivace energie napjatosti podle přetvoření (pro malé deformace libovolně definovaného, např. smluvního přetvoření $\varepsilon$) opravdu určuje odpovídající složku napětí (pro malé deformace opět podle libovolné definice tenzoru napětí), jak ukazuje následující výraz:
 \begin{equation}
 	S_{ij} = \frac{\partial W}{\partial E_{ij}}
 	= \frac{\partial W}{\partial \varepsilon}
@@ -19,7 +19,7 @@ Derivace této energie napjatosti podle přetvoření (pro malé deformace defin
 	= \frac{\partial \left(\frac{1}{2} E \varepsilon^2\right)}{\partial \varepsilon}
 	= \frac{2}{2} E \varepsilon = \sigma
 \end{equation}
-Lineárně elastický materiál je tedy jen zvláštním případem materiálu hyperelastického.
+\textbf{Lineárně elastický materiál je tedy jen zvláštním případem materiálu hyperelastického.}
 Podobně lze vyjádřit napětí i~pro víceosou napjatost.
 
 \subsubsection{Energie napjatosti hookovského materiálu pro víceosou napjatost}

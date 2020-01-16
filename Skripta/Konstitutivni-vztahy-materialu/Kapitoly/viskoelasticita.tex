@@ -62,7 +62,7 @@ Cauchyho rovnice rovnováhy:
 	\vec{o} = \vec{A} \rho
 \end{equation}
 
-Hydromechanika -- Eulerova rovnice hydrostatiky
+Machanika kapalin -- Eulerova rovnice hydrostatiky
 \begin{align}
 	A_x - \frac{1}{\rho} \frac{\partial p}{\partial x} = 0\\
 	A_y - \frac{1}{\rho} \frac{\partial p}{\partial y} = 0\\
@@ -100,7 +100,7 @@ Mechanika těles
 	\end{equation}
 \end{itemize}
 
-Hydromechanika
+Machanika kapalin
 \begin{itemize}
 	\item modul objemové stlačitelnosti $\varepsilon$
 	\begin{equation}
@@ -187,16 +187,16 @@ Skokové změny deformace nelze dosáhnout (nutno $\sigma \rightarrow \infty$).
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{reologicke-modely}
-	\caption{Reologické modely pro základní typy viskoelastického chování}
-	\label{fig:reologicke-modely}
+	\includegraphics[width=0.75\linewidth]{slozitejsi-reologicke-modely}
+	\caption{Příklady složitějších reologických modelů viskoelastického chování}
+	\label{fig:slozitejsi-reologicke-modely}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\linewidth]{slozitejsi-reologicke-modely}
-	\caption{Příklady složitějších reologických modelů viskoelastického chování}
-	\label{fig:slozitejsi-reologicke-modely}
+	\includegraphics[width=0.75\linewidth]{reologicke-modely}
+	\caption{Reologické modely pro základní typy viskoelastického chování}
+	\label{fig:reologicke-modely}
 \end{figure}
 
 \subsubsection{Standard linear solid}
@@ -211,7 +211,7 @@ Diferenciální rovnice
 \begin{equation}
 	\sigma + \tau_\varepsilon \frac{\diff \sigma}{\diff t} = G_0 \left(\varepsilon + \tau_\sigma \frac{\diff \varepsilon}{\diff t}\right)
 \end{equation}
-kde $\tau_\varepsilon = \frac{\eta}{G_1}, \tau_{12}\sigma = \frac{\eta}{G_0} \left(1 + \frac{G_0}{G_1}\right)$
+kde relaxační doba při konstantní deformaci je $\tau_\varepsilon = \frac{\eta}{G_1}$ a~retardační doba při konstantním napětí je $\tau_{12}\sigma = \frac{\eta}{G_0} \left(1 + \frac{G_0}{G_1}\right)$
 
 \begin{figure}[H]
 	\centering
@@ -304,10 +304,9 @@ $a_T = \frac{\tau_T}{\tau_T^\text{ref}}$\\
 $T_s = T_\text{ref}$ -- referenční teplota
 
 \subsection{Popis závislosti viskoelasticity na teplotě}
-Na základě uvedené závislosti mezi teplotou a~změnou viskozity (časové konstanty), která je přibližně stejná pro většinu polymerů i~jiných látek, formulovali Wiliams, Landal a~Ferry rovnici ve tvaru:
-\begin{equation}
-	\log_{10} a_T =
-	\frac{c_1 (T - T_\text{ref})}{c_2 + T - T_\text{ref}},
+Na základě uvedené závislosti mezi teplotou a~změnou viskozity (časové konstanty), která je přibližně stejná pro většinu polymerů i~jiných látek, formulovali \textsc{Wiliams}, \textsc{Landal} a~\textsc{Ferry} rovnici ve tvaru:
+\begin{equation}\label{eq:williams-landal-ferry}
+	\log_{10} a_T = 	\frac{c_1 (T - T_\text{ref})}{c_2 + T - T_\text{ref}},
 \end{equation}
 kde
 \begin{description}
@@ -318,7 +317,11 @@ kde
 
 $T_\text{ref}$ se volí obvykle cca $\SI{50}{\celsius}$ nad teplotou skelného přechodu $T_g$ a~vztah platí v~intervalu ($T_g$ ; $T_g +100$) $[\si{\kelvin}]$.
 
-Uvedený vztah odpovídá popisu v~menu ANSYSu. v~Helpu ANSYSu je vztah napsán jinak, významy konstant neodpovídají.
+Vztah (\ref{eq:williams-landal-ferry}) odpovídá popisu v~menu ANSYSu. V~nápovědě ANSYSu (a~zřejmě i~reálně naprogramován) je vztah
+\begin{equation}\label{eq:williams-landal-ferry-ansys}
+\log_{10} a_T = \frac{-c_1 (T - T_\text{ref})}{c_2 + T - T_\text{ref}},
+\end{equation}
+s~mínusem (a~další konstantou, která zůstává nulová) a~používá (zřejmě omylem) $\ln$ místo $\log$. 
 
 \subsection{Praktické využití modelů lineární viskoelasticity}
 \begin{itemize}

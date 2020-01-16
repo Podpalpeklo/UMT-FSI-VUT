@@ -1,6 +1,6 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = cs_CZ
-\documentclass[a4paper, 10pt, oneside]{report}
+\documentclass[a4paper, 12pt, oneside]{report}
 
 % Oprava vykopírovávání diakritiky
 \usepackage[resetfonts]{cmap}
@@ -51,14 +51,14 @@
 \numberwithin{equation}{part}
 % Soubory PDF
 \usepackage[unicode=true,colorlinks=false,verbose=true]{hyperref}
-\hypersetup{pdftitle={Konstitutivní vztahy materiálů},pdfauthor={prof. Dr. Ing. Jiří Burša},pdflang=cs}
+\hypersetup{pdftitle={Konstitutivní vztahy materiálů},pdfauthor={prof. Dr. Ing. Jiří Burša, Ing. Roman Papšík},pdfsubject={skripta},pdflang=cs}
 
 \begin{document}
 
 \begin{titlepage}
 \pagecolor{fsimodra}
 \color{white}
-\renewcommand{\thepage}{Cover}
+\renewcommand{\thepage}{cover}
 \centering
 \bfseries
 {Ústav mechaniky těles, biomechaniky a~mechatroniky\\Fakulta strojního inženýrství\\Vysoké učení v~Brně\\}
@@ -75,80 +75,13 @@
 \color{black}
 \pagenumbering{roman}
 \tableofcontents
-
 \clearpage
 \pagenumbering{arabic}
-\chapter{Teorie elasticity}
-\input{Kapitoly/einsteinovo-scitaci-pravidlo}
-\input{Kapitoly/shear}
-\input{Kapitoly/konecne-deformace}
-\input{Kapitoly/deformovane-souradnice}
-\input{Kapitoly/deformace-cauchy-green}
-\input{Kapitoly/deformacni-gradient}
-\input{Kapitoly/stretch-tensor}
-\input{Kapitoly/pretvoreni-obrazek}
-\input{Kapitoly/pretvoreni-smluvni}
-\input{Kapitoly/pretvoreni-green-lagrange}
-\input{Kapitoly/pretvoreni-almansi}
-\input{Kapitoly/pretvoreni-cauchy}
-\input{Kapitoly/pretvoreni-prepocty}
-\input{Kapitoly/napeti-cauchy}
-\input{Kapitoly/napeti-1-piola-kirchhoff}
-\input{Kapitoly/napeti-2-piola-kirchhoff}
-\input{Kapitoly/napeti-prepocty}
-\input{Kapitoly/energeticky-konjugovane-tenzory}
-%\input{Kapitoly/modifikovane-invarianty}
-\input{Kapitoly/pseudoinvarianty}
-\chapter{Konstitutivní modely}
-\input{Kapitoly/konstitutivni-modely}
-\input{Kapitoly/prehled-konstitutivnich-modelu}
-\input{Kapitoly/integralni-popis}
-\input{Kapitoly/mises}
-\input{Kapitoly/mises-pretvoreni}
-\input{Kapitoly/stavova-rovnice}
-\input{Kapitoly/idealni-plyn}
-\input{Kapitoly/idealni-kapalina}
-\input{Kapitoly/tenzor-napeti-idealni-kapaliny}
-\chapter{Modely elasticity}
-\input{Kapitoly/elasticita}
-\input{Kapitoly/hookeuv-zakon}
-\input{Kapitoly/zavislost-elastickych-konstant}
-\input{Kapitoly/entropicka-elasticita}
-\input{Kapitoly/hyperelasticita}
-\input{Kapitoly/energie-otazka}
-\input{Kapitoly/zkousky-elastomeru}
-\input{Kapitoly/neo-hooke}
-\input{Kapitoly/mooney-rivlin}
-\input{Kapitoly/yeoh}
-\input{Kapitoly/arruda-boyce}
-\input{Kapitoly/predikce}
-\input{Kapitoly/foam}
-\input{Kapitoly/neelasticke-efekty}
-\input{Kapitoly/ogden-roxburgh}
-\input{Kapitoly/bergstrom-boyce}
-\input{Kapitoly/error-function}
-\input{Kapitoly/anizotropni-modely}
-\chapter{Modely viskoelasticity}
-\input{Kapitoly/viskozita}
-\input{Kapitoly/newtonuv-zakon}
-\input{Kapitoly/gradient-rychlosti}
-\input{Kapitoly/viskoelasticita}
-\input{Kapitoly/komplexni-modul}
-\input{Kapitoly/visko-hyperelasticke-modely}
-\chapter{Modely plasticity}
-\input{Kapitoly/plasticita}
-\input{Kapitoly/mohr-coulomb}
-\input{Kapitoly/drucker-prager}
-\input{Kapitoly/ramberg-osgood}
-\input{Kapitoly/lode}
-\input{Kapitoly/faktor-triaxiality-napeti}
-\input{Kapitoly/voce4}
-\input{Kapitoly/johnson-cook-plasticita}
-\input{Kapitoly/norton}
-\input{Kapitoly/chaboche}
-\input{Kapitoly/bai-wierzbicki}
-\input{Kapitoly/johnson-cook-poruseni}
-
+\include{Kapitoly/kapitola-mechanika-kontinua}
+\include{Kapitoly/kapitola-konstitutivni-modely}
+\include{Kapitoly/kapitola-elasticita}
+\include{Kapitoly/kapitola-viskoelasticita}
+\include{Kapitoly/kapitola-plasticita}
 \appendix
 \include{Kapitoly/zkouskove-otazky}
 
