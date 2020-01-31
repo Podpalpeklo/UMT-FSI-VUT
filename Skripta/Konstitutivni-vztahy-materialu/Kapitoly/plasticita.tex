@@ -1,13 +1,15 @@
 % !TeX root = skripta-konstitutivni-vztahy.tex
 % !TeX lastmodified = 2018-12-10
 
-\section{Modely elasto-plastického chování}
+\subsection{Doporučená literatura}
+\begin{itemize}
+	\item J. Hůlka: Výpočtová predikce tvárného porušování. Disertační práce VUT Brno, 2014.
+	\item Kubík P.: Implementace, kalibrace a využití podmínek tvárného lomu v programech MKP. Disertační práce VUT Brno, 2015.
+	\item články v časopisech uvedené u jednotlivých modelů.
+\end{itemize}
 
-J. Hůlka: Výpočtová predikce tvárného porušování. Disertační práce VUT Brno, 2014.
-Kubík P.: Implementace, kalibrace a využití podmínek tvárného lomu v programech MKP. Disertační práce VUT Brno, 2015.
-články v časopisech uvedené u jednotlivých modelů.
+Plastické (tvárné) materiály vykazují kromě malých elastických přetvoření konečná (tj. velká) nevratná přetvoření. V~jejich důsledku je nutné pro část tahové křivky mezi $R_e$ a~$R_m$ přepočítat smluvní hodnoty napětí a~přetvoření na \enquote{skutečné napětí -- logaritmické přetvoření}.
 
-Plastické (tvárné) materiály vykazují kromě malých elastických přetvoření konečná (tj. velká) nevratná přetvoření. V jejich důsledku je nutné pro část tahové křivky mezi $R_e$ a~$R_m$ přepočítat smluvní hodnoty napětí a~přetvoření na „skutečné napětí -- logaritmické přetvoření“.
 Nad hodnotou $R_m$ se vytvoří krček a~v~něm vzniká víceosá napjatost, kdy je třeba použít redukované napětí a~přetvoření a~jednoduchý přepočet není možný (vliv geometrie krčku, tedy jeho průměru a~poloměru zaškrcení, na pole napjatosti).
 
 \subsection{Popis plastické deformace}
@@ -25,8 +27,8 @@ K~popisu pružně-plastického chování materiálu je nutné znát:
 	\begin{itemize}
 		\item \hyperref[sec:ramberg-osgood]{Ramberg-Osgood}
 		\item \hyperref[sec:model-voce-4]{Voce 4}
-		\item \hyperref[sec:johnson-cook-viskoplasticita]{Johnson-Cook} -- viskoplastický model s~vlivem teploty
 		\item \hyperref[sec:norton]{Norton} -- model viskoplastického creepu
+		\item \hyperref[sec:johnson-cook-viskoplasticita]{Johnson-Cook} -- viskoplastický model s~vlivem teploty
 	\end{itemize}
 	\item Model zpevnění materiálu
 	\begin{itemize}

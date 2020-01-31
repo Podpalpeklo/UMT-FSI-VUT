@@ -1,16 +1,12 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-12-11
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-12-11
 
-\subsection{Použitelnost modelu plastického tečení}
-Plastické tečení významně závisí na rychlosti zatěžování, tedy je de facto viskoplastické. Mezní plocha plasticity závisí na rychlosti zatěžování (viz obr. \ref{fig:zavislost-mezni-plochy-plasticity})
+\subsection{Použití viskoplastických modelů}
+Pokud plastická deformace významně závisí na rychlosti zatěžování, jedná se o chování viskoplastické (viz obr. \ref{fig:zavislost-mezni-plochy-plasticity}).
 
-Plastické modely lze použít:
-\begin{itemize}
-	\item při velmi (nekonečně) malých rychlostech zatěžování, platí vnitřní křivka na obr. \ref{fig:zavislost-mezni-plochy-plasticity}
-	\item při velmi vysokých rychlostech zatěžování (rázové děje) platí vnější křivka na obr. \ref{fig:zavislost-mezni-plochy-plasticity}
-	\item při absolutní teplotě do $\tfrac{1}{4}$ teploty tavení kovu, kdy je rozdíl mezi oběma křivkami zanedbatelný. 
-\end{itemize}
-V~ostatních případech nutný viskoplastický model.
+Viskoplastické modely umožňují popsat mezní plochy plasticity pro široké rozmezí rychlostí zatěžování,
+od nekonečně malých (rovnovážný stav) po velmi vysoké (rázové děje).
+U~kovů jsou potřebné, pokud absolutní teplota překročí $\frac{1}{4}$ teploty tavení kovu. 
 
 \begin{figure}
 	\label{fig:zavislost-mezni-plochy-plasticity}
@@ -34,7 +30,7 @@ kde
 	\item[$T^* = \tfrac{T-T_0}{T_m-T_0}$] se nazývá homologická teplota, kde 
 	$T$, $T_m$, $T_0$ značí aktuální teplotu, teplotu tavení a~pokojovou teplotu $[\si{\kelvin}]$.
 	\item[$\sigma_y$] je mez kluzu,
-	\item[{$K\:[\si{\mega\pascal}], n\:[-], C\:[-], m\:[-]$}] jsou další parametry modelu.
+	\item[{$K\:[\si{\mega\pascal}], n\:[-]<1, C\:[-], m\:[-]$}] jsou další parametry modelu.
 \end{description}
 
 \subsubsection{Materiálové zkoušky pro viskoplastický model}
@@ -57,3 +53,11 @@ Pro identifikaci modelu je třeba experimentálně určit závislost na rychlost
 		\dot{\varepsilon}^* = \frac{\dot{\bar{\varepsilon}}_p}{\dot{\bar{\varepsilon}}_0}
 	\end{equation}
 \end{itemize}
+
+\begin{figure}
+	\label{fig:vliv-zvyseni-teploty-johnsoon-cook}
+	\centering
+%	\includegraphics[width=0.5\linewidth]{}
+	\caption{Vliv zvýšení teploty o~\SI{200}{\kelvin} na deformačně-napěťovou křivku}
+\end{figure}
+	

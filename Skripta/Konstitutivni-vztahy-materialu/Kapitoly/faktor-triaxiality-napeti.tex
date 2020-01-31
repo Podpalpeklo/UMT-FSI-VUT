@@ -1,5 +1,5 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-12-11
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-12-11
 
 \subsection{Faktor triaxiality napětí}
 Střední napětí (hydrostatická -- kulová) složka tenzoru napětí nemá významný vliv na mez kluzu, ale má značný vliv na tvárné porušení. Jeho normalizovaná hodnota se nazývá faktor triaxiality napětí.
@@ -14,14 +14,14 @@ kde
 	\item[$\sigma_\text{HMH}$] je redukované napětí podle Misesovy podmínky plasticity (deviátorová složka napjatosti).
 \end{description}
 
-Z~vlastností uvedených složek napětí plyne, že $\eta$ je nulové pro smykovou napjatost (nulová střední složka napětí, čistý deviátor) a~dosahuje extrémních hodnot $+\infty/-\infty$ pro rovnoměrnou trojosou napjatost v~tahu (tlaku). 
+Z~vlastností uvedených složek napětí plyne, že $\eta$ je nulové pro smykovou napjatost (nulová střední složka napětí, čistý deviátor) a~dosahuje extrémních hodnot $\pm\infty$ pro rovnoměrnou trojosou napjatost v~tahu (tlaku). 
 
 Změní-li se znaménko všech složek napětí, nezmění se velikost triaxiality, ale změní se jen znaménko faktoru triaxiality napětí.
 
 \begin{figure}[H]\centering\begin{tabular}{lll}\toprule
 	Název & $\eta$ & Hlavní napětí\\ \midrule
 	Smyková & $0$ & $\sigma_3 = -\sigma_1; \sigma_2 = 0$\\
-	Dvouosá s~opačnými znam. hl. napětí & $0< \eta < \tfrac{1}{3}$ & $0 < |\sigma_3| = -\sigma_3 < \sigma_1; \sigma_2 = 0$\\%todo Tady by měl být středník?
+	Dvouosá s~opačnými znam. hl. napětí & $0< \eta < \tfrac{1}{3}$ & $\sigma_1 > 0 >\sigma_3; \sigma_2 = 0$\\
 	Jednoosá tahová & $\eta = \tfrac{1}{3}$ & $\sigma_1 > 0; \sigma_2 = \sigma_3 = 0$\\
 	Dvouosá tahová nerovnoměrná & $\tfrac{1}{3} < \eta < \tfrac{2}{3}$ & $0 < \sigma_2 < \sigma_1; \sigma_3 = 0$\\
 	Dvouosá tahová rovnoměrná & $\eta = \tfrac{2}{3}$ & $\sigma_1 = \sigma_2 > 0; \sigma_3 = 0$\\
@@ -36,7 +36,7 @@ Změní-li se znaménko všech složek napětí, nezmění se velikost triaxiali
 \begin{figure}[H]\centering\begin{tabular}{lll}\toprule
 	Název & $\eta$ & Hlavní napětí\\ \midrule
 	Smyková & $0$ & $\sigma_3 = -\sigma_1; \sigma_2 = 0$\\
-	Dvouosá s opačnými znam. hl.  napětí & $0 > \eta > -\tfrac{1}{3}$ & $\sigma_1 < |\sigma_3|; \sigma_2 = 0; \sigma_3 < 0$\\
+	Dvouosá s opačnými znam. hl.  napětí & $0 > \eta > -\tfrac{1}{3}$ & $0 < \sigma_1 < |\sigma_3|; \sigma_2 = 0; \sigma_3 < 0$\\
 	Jednoosá tlaková & $\eta= -\tfrac{1}{3}$ & $\sigma_1 = \sigma_2 = 0; \sigma_3 < 0$\\
 	Dvouosá tlaková nerovnoměrná & $-\tfrac{1}{3} > \eta > -\tfrac{2}{3}$ & $\sigma_1 = 0; \sigma_3 < \sigma_2 < 0$\\
 	Dvouosá tlaková rovnoměrná & $\eta = -\tfrac{2}{3}$ & $\sigma_1 = 0; \sigma_2 = \sigma_3 < 0$\\

@@ -1,16 +1,5 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-11-07
-
-\subsection{Model Blatz-Ko pro pěnové pryže}\label{sec:blatz-ko}
-Tento model navržený pro pěnové pryže zavádí měrnou energii napjatosti ve tvaru
-\begin{equation}
-	W = \frac{G}{2} \left( \frac{I_2}{I_3} + 2 \sqrt{I_3} - 5 \right),
-\end{equation}
-kde
-\begin{description}
-	\item[$G$] je modul pružnosti ve smyku,
-	\item[$I_2, I_3$] jsou invarianty pravého Cauchy-Greenova tenzoru deformace.
-\end{description}
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-11-06
 
 \subsection{Model Ogden pro pěnové pryže}\label{sec:ogden-foam}
 Tento model zavádí energii napjatosti ve tvaru
@@ -32,5 +21,17 @@ kde
 	\item[$J$] je třetí invariant tenzoru deformačního gradientu.
 \end{description}
 
-Model je použitelný jen v~tlaku, ne v~tahu (u~pěny se nepředpokládá).
 Pro $\beta_i = 0$ dostaneme nestlačitelný model \hyperref[sec:model-ogden]{Ogden}.
+
+Model je použitelný jen v~tlaku ($J < 1$) (u~pěny se nepředpokládá).
+
+\subsection{Model Blatz-Ko pro pěnové pryže}\label{sec:blatz-ko}
+Tento model navržený pro pěnové pryže zavádí měrnou energii napjatosti ve tvaru
+\begin{equation}
+	W = \frac{G}{2} \left( \frac{I_2}{I_3} + 2 \sqrt{I_3} - 5 \right),
+\end{equation}
+kde
+\begin{description}
+	\item[$G$] je modul pružnosti ve smyku,
+	\item[$I_2, I_3$] jsou invarianty pravého Cauchy-Greenova tenzoru deformace.
+\end{description}

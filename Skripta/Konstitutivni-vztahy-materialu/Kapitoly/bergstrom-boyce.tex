@@ -1,9 +1,9 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-11-27
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-11-27
 
-\subsection{Model Bergstrőm-Boyce}\label{sec:bergstrom-boyce}
+\subsection{Model Bergstr\H{o}m-Boyce}\label{sec:bergstrom-boyce}
 Tento model\footnote{Bergström JS, Boyce MC (1998):  Constitutive Modeling of the Large Strain Time-dependent Behavior of Elastomers, Journal of the Mechanics and Physics of Solids 45 (5), pp. 931-954.}\footnote{Bergström, J. S., Boyce, M. C. (2001): Constitutive Modeling of the Time-Dependent and Cyclic Loading of Elastomers and Application to Soft Biological Tissues, Mechanics of Materials 33, pp. 523-530.} byl navržen v~roce 1998 pro popis časově závislého chování elastomerů ve velkých deformacích.
-Vychází z~modelu hyperelastického Arruda-Boyce a~rozšiřuje jej o~popis závislosti mechanické odezvy na rychlosti deformace;
+Vychází z~hyperelastického modelu Arruda-Boyce a~rozšiřuje jej o~popis závislosti mechanické odezvy na rychlosti deformace (viskohyperelasticitu);
 tím umožňuje popsat hysterezi deformačně-napěťových křivek, stejně jako tečení a~relaxaci napětí.
 
 Podobně jako model Arruda-Boyce vychází z~modelu prostorové sítě makromolekulárních řetězců, jejichž deformace je řízena entropickou elasticitou.
@@ -22,7 +22,7 @@ Paralelní části reologického modelu mají stejnou deformaci, tedy platí
 	\bm{F} = \bm{F}_A = \bm{F}_B
 \end{equation}
 
-Pro řetězec~B lze deformaci rozložit na část elastickou a neelastickou (viskózní)
+Pro řetězec~B lze deformaci rozložit na část elastickou a~neelastickou (viskózní)
 \begin{equation}
 	\bm{F}^B = \bm{F}^B_\text{el} \bm{F}^B_\text{vis}
 \end{equation}
@@ -35,8 +35,8 @@ Na každý z~deformačních tenzorů je možné aplikovat jeho polární dekompo
 	\label{fig:polarni-dekompozice}
 \end{figure}
 
-\subsubsection{Princip relaxace modelu Bergstrőm-Boyce}
-Relaxaci napětí lze nejsnadněji vysvětlit existencí volného řetězce v~síti makromolekul, jehož deformace se „plazivým“ pohybem pomalu vrací do více zvlněného (a~tedy přirozenějšího) stavu.
+\subsubsection{Princip relaxace modelu Bergstr\H{o}m-Boyce}
+Relaxaci napětí lze nejsnadněji vysvětlit existencí volného řetězce v~síti makromolekul, jehož deformace se \enquote{plazivým} pohybem pomalu vrací do více zvlněného (a~tedy přirozenějšího) stavu.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{volny-retezec}
@@ -44,7 +44,7 @@ Relaxaci napětí lze nejsnadněji vysvětlit existencí volného řetězce v~s�
 	\label{fig:volny-retezec}
 \end{figure}
 
-Přestože se volné řetězce v~makromolekulární síti elastomerů nevyskytují, existují tam téměř volné konce řetězců, které se chovají podobně.
+Přestože se volné řetězce v~makromolekulární síti  elastomerů nevyskytují, mohou tam existovat téměř volné (náhodně ohnuté) konce řetězců (obr. vpravo), které se chovají podobně.
 Po deformaci se napnou a~postupně se vracejí do více zvlněného stavu s~vyšší entropií.
 \begin{figure}[H]
 	\centering
@@ -67,11 +67,10 @@ zatímco viskózní část je popsána následujícím vztahem mezi napětím a~
 \begin{equation}
 	\dot{\gamma} = \gamma_0 \left( \varepsilon_\text{chain}^\text{vis} \right)^C \left( \frac{\tau}{\tau_\text{base}} \right)^m,
 \end{equation}
-který lze upravit do tvaru
+který lze upravit do tvaru používaného v~ANSYSu:
 \begin{equation}
 	\dot{\gamma} = \frac{\gamma_0}{\tau_\text{base}^m} \left( \lambda_\text{chain}^\text{vis} - 1 + \delta \right)^C \tau^m.
 \end{equation}
-
 ANSYS zde využívá ještě rovnici
 \begin{equation}
 	\lambda_L = \sqrt{N}.

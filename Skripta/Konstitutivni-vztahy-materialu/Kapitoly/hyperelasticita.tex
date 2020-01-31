@@ -1,7 +1,13 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-11-27
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-11-06
 
 \section{Hyperelasticita -- Konstitutivní vztahy elastomerů}
+
+Jako hyperelastické označujeme materiály vykazující konečná vratná přetvoření.
+
+Konečná přetvoření jsou taková která nejsou infinitezimální tedy nekonečně malá.
+V~praxi jsou to přetvoření větší než cca \SI{1}{\percent}, chyba vzniklá jejich zanedbáním však roste nelineárně a~stává se velmi významnou, dosáhnou-li přetvoření desítek procent. 
+
 \subsection{Rozdíly oproti teorii malých deformací}
 
 Definice délkových přetvoření pro malé deformace
@@ -36,7 +42,7 @@ Proto jsou zavedeny různé definice tenzorů přetvoření i~napětí.
 \begin{itemize}
 	\item Pro malé deformace -- smluvní přetvoření (engineering strain)
 	\item Green-Lagrangeův tenzor přetvoření
-	\item Almansiho tenzor přetvoření
+	\item Almansiho-Hamelův tenzor přetvoření
 	\item Cauchyho (logaritmický) tenzor přetvoření
 	\item Tenzor deformačního gradientu
 	\item Cauchy-Greenův tenzor deformace (pravý a~levý)
@@ -78,7 +84,7 @@ kde
 \end{description}
 
 Kontrolní otázka: Vyhovuje této definici hyperelasticity hookovský materiál? Odpověď.
-%todo odpověď
+%todo zde prezentace energie-otazka-ppt
 
 \subsection{Výpočet Cauchyho napětí u~hyperelastických materiálů}
 Přepočet mezi tenzory napětí lze vyjádřit následovně:
@@ -124,9 +130,9 @@ Izotropní (téměř) nestlačitelné:
 
 Izotropní stlačitelné
 \begin{itemize}
+	\item \hyperref[sec:ogden-foam]{Ogden (foam)}
 	\item \hyperref[sec:blatz-ko]{Blatz-Ko (foam)}
 	\item Hill-Storakers (foam)
-	\item \hyperref[sec:ogden-foam]{Ogden (foam)}
 \end{itemize}
 
 \hyperref[sec:anizotropni-hyperelasticke-modely]{Anizotropní (téměř) nestlačitelné}
@@ -136,8 +142,8 @@ Izotropní stlačitelné
 	\item Choi-Vito
 	\item \hyperref[sec:model-hgo]{Holzapfel, 2000}
 	\item Holzapfel, 2005
-	\item Gasser (rozptyl směrů vláken)
-	\item Microfiber (rozptyl směrů vláken)
+	\item Gasser (rozptyl směrů vláken, zjednodušená integrace)
+	\item Microfiber (rozptyl směrů vláken, plná integrace)
 \end{itemize}
 
 \subsubsection{Modely neelastického chování}
@@ -166,9 +172,9 @@ Creepové modely
 \end{itemize}
 
 \subsubsection{Model Neo-Hooke}
-Tento model zavádí měrnou energii napjatosti ve tvaru (Treloar, 1975)
+Tento model zavádí měrnou energii napjatosti ve tvaru\footnote{(Treloar, 1975, pro nestlačitelnost odvozen termodynamicky již 1934)}
 \begin{equation}\label{neo_hooke}
-W = \frac{G}{2} \left( \bar{I}_1 - 3 \right) + \frac{1}{d} \left( J - 1 \right)^2,
+	W = \frac{G}{2} \left( \bar{I}_1 - 3 \right) + \frac{1}{d} \left( J - 1 \right)^2,
 \end{equation}
 kde
 \begin{description}
@@ -178,7 +184,9 @@ kde
 	\item[$J$] je třetí invariant tenzoru deformačního gradientu.
 \end{description}
 
-Vzhledem k~tomu, že tvarová změna je u~tohoto modelu popsána jedinou elastickou konstantou, je tento model použitelný do cca 30\% přetvoření, kdy nelinearita není příliš výrazná. Model je lineární pro Cauchyho napětí a~levý Cauchy-Greenův deformační tenzor.
+Vzhledem k~tomu, že tvarová změna je u~tohoto modelu popsána jedinou elastickou konstantou, je tento model použitelný do cca \SI{30}{\percent}, kdy nelinearita není příliš výrazná. Model je lineární pro Cauchyho napětí a~levý Cauchy-Greenův deformační tenzor.
+
+Platí $G = 2nkT$, kde $n$ je počet molekulárních řetězců v~jednotkovém objemu, $k$ je Boltzmanova konstanta a~$T$ absolutní teplota.
 
 \subsubsection{Model Mooney-Rivlin 2-parametrický}
 Tento model zavádí měrnou energii napjatosti ve tvaru
@@ -194,7 +202,7 @@ kde
 	\item[$J$] je třetí invariant tenzoru deformačního gradientu.
 \end{description}
 
-Tento model je použitelný do cca 100\% přetvoření, pokud křivka přetvoření-napětí nevykazuje inflexi.
+Tento model je použitelný do cca \SI{100}{\percent} přetvoření, pokud křivka přetvoření-napětí nevykazuje inflexi.
 
 \subsubsection{Model Mooney-Rivlin 5-parametrický}
 Tento model zavádí měrnou energii napjatosti ve tvaru
@@ -295,6 +303,8 @@ Pro počáteční objemový modul pružnosti zde platí vztah
 	K = \frac{2}{d_1}.
 \end{equation}
 
+Tento model dokáže popsat i~extrémně velké deformace.
+
 \subsection{Zadávání vlastností hyperelastických materiálů v~programových systémech MKP}
 Existují dvě základní možnosti zadávání vlastností hyperelastického materiálu do programových systémů MKP:
 \begin{itemize}
@@ -302,7 +312,7 @@ Existují dvě základní možnosti zadávání vlastností hyperelastického ma
 	\item Pomocí přímého zadání elastických parametrů zvoleného modelu. Tento způsob lze použít:
 	\begin{itemize}
 		\item Při opakovaných výpočtech s materiálem, jehož konstanty jsme již dříve určili; vhodné jen při nepříliš odlišných deformačně-napěťových stavech.
-		\item Pokud jsme konstanty modelu určili z~experimentů jiným způsobem. Základem výpočtu konstant je metoda nejmenších čtverců, která hledá hodnoty konstant při minimalizaci kvadrátů odchylek. Při samostatném určování materiálových parametrů je možné použít sofistikovanější metody jejich určování, např. relativní odchylky místo absolutních, zvýraznění nebo potlačení některých částí deformačně napěťových křivek pomocí váhových koeficientů nebo změnou počtu zadávaných bodů experimentálních křivek.
+		\item Pokud jsme konstanty modelu určili z~experimentů jiným způsobem. Základem výpočtu konstant je metoda nejmenších čtverců, která hledá hodnoty konstant při minimalizaci kvadrátů odchylek. Při samostatném určování materiálových parametrů je možné použít sofistikovanější metody jejich určování, např. relativní odchylky místo absolutních, zvýraznění nebo potlačení některých částí deformačně napěťových křivek pomocí váhových koeficientů nebo změnou počtu zadávaných bodů experimentálních křivek (viz \texttt{www.hyperfit.wz.cz}).
 	\end{itemize}
 \end{itemize}
 
@@ -334,13 +344,13 @@ Pro určení materiálových parametrů hyperelastických konstitutivních model
 \subsection{Zadávání výsledků zkoušky do programových systémů MKP}
 Většina současných komerčních programových systémů MKP disponuje softwarem pro identifikaci materiálových parametrů jednotlivých hyperelastických modelů z naměřených experimentálních křivek napětí-přetvoření. Při jejich zadávání je třeba mít na paměti následující upozornění:
 \begin{itemize}
-	\item Rozsah zkoušek (extrémní velikost přetvoření) by měl mírně přesahovat očekávaný rozsah přetvoření v řešeném výpočtovém modelu. Obvykle jej předem neznáme, jedná se tedy o~iterační proces, kdy v~prvním kroku zadáme raději maximální změřený rozsah přetvoření a~na základě výsledků jej poté upravujeme. Příliš velký rozsah modelu totiž významně snižuje jeho přesnost.
+	\item Rozsah zkoušek (extrémní velikost přetvoření) by měl mírně přesahovat očekávaný rozsah přetvoření v~řešeném výpočtovém modelu. Obvykle jej předem neznáme, jedná se tedy o~iterační proces, kdy v~prvním kroku zadáme raději maximální změřený rozsah přetvoření a~na základě výsledků jej poté upravujeme. Příliš velký rozsah modelu totiž významně snižuje jeho přesnost.
 	\item Nemáme-li k~dispozici výsledky všech potřebných materiálových zkoušek, je velmi riskantní používání zdánlivě přesnějších modelů používajících např. polynomy vyšších stupňů. Dosáhneme tím sice přesnější aproximace zadaných křivek, ale výsledky pro jiné typy napjatosti mohou být zcela nesmyslné (nejsou podloženy experimentálními daty). Zásadně je možné takový výpočtový model použít jen pro řešení takových problémů, při nichž se nevyskytnou typy deformačně-napěťových stavů, pro něž nebyly zadány experimentální křivky. V~opačném případě mohou být výsledky zcela chybné, podobně jako když rozsah přetvoření při určitém typu napjatosti (např. při jednoosém tahu) přesáhne rozsah realizovaný při experimentu.
 \end{itemize}
 
 \subsection{Zásady pro práci s~hyperelastickými modely v~programových systémech MKP}
 \begin{itemize}
-	\item Vždy zevrubně prostudujeme manuál programu, abychom zjistili použitý tvar funkce pro energii napjatosti a~význam jednotlivých materiálových parametrů, což je důležité pro orientační kontrolu jejich hodnot.
+	\item Vždy zevrubně prostudujeme manuál programu, abychom zjistili použitý tvar funkce pro energii napjatosti a~význam jednotlivých materiálových parametrů, což je důležité pro jejich správné použití a~orientační kontrolu jejich hodnot.
 	\item Zjistíme, v~jakých tenzorech napětí a~přetvoření je třeba zadávat experimentální údaje.
 	\item Zjistíme, v~jakých tenzorech napětí a~přetvoření obdržíme konečné výsledky. 
 	\item Při každé práci s~novým konstitutivním modelem nebo novým programovým systémem vždy nejprve provedeme simulaci základních zadaných zkoušek materiálu, abychom na úloze se známými výsledky eliminovali chybný postup při tvorbě a~zadávání modelu.

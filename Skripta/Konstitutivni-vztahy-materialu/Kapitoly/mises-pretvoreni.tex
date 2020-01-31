@@ -1,8 +1,8 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-12-11
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-11-27
 
 \subsection{Misesova mezní podmínka vyjádřená pomocí přetvoření}
-Mezní podmínku podle von Misese lze odvodit také energetickým přístupem, kdy mezní stav (plasticity nebo pevnosti, podmínka je používána i~jako pevnostní kriterium) nastane tehdy, když měrná deformační energie změny tvaru (deviátorová) dosáhne jisté mezní hodnoty, která je materiálovou charakteristikou.
+Mezní podmínku podle von Misese lze odvodit také energetickým přístupem, kdy mezní stav (plasticity nebo pevnosti, podmínka je používána i~jako pevnostní kritérium) nastane tehdy, když měrná deformační energie změny tvaru (deviátorová) dosáhne jisté mezní hodnoty, která je materiálovou charakteristikou.
 
 Tuto energii napjatosti lze pak vyjádřit duálně pomocí napětí nebo přetvoření.
 Vyjádříme-li ji pomocí přetvoření, dospějeme k~pojmu redukované (ekvivalentní) přetvoření, což je největší hlavní přetvoření při jednoosé napjatosti (tj. přetvoření ve směru působícího zatížení), které dává podle Misesovy podmínky stejnou bezpečnost vůči meznímu stavu jako vyšetřovaný víceosý deformačně-napěťový stav. 
@@ -15,16 +15,16 @@ zatímco pro ekvivalentní jednoosou napjatost
 \begin{equation}
 	\sigma_\text{ekv} = E \varepsilon_\text{ekv} = 2 G (1+\mu) \varepsilon_\text{ekv},
 \end{equation}
-takže člen $1+\mu$ se musí objevit v~redukovaném přetvoření.
+takže ve vztahu pro redukované přetvoření je navíc člen $\frac{1}{1+\mu}$ .
 
 \subsubsection{Misesova mezní podmínka pro ekvivalentní (redukované) přetvoření}
 Ekvivalentní přetvoření je definováno vztahem
 \begin{equation}
-	\varepsilon_\text{ekv} = \frac{1}{1+\mu} \sqrt{\frac{1}{2} \left[ (\varepsilon_x-\varepsilon_y)^2 + (\varepsilon_x-\varepsilon_z)^2 + (\varepsilon_y-\varepsilon_z)^2 + \frac{6}{4} \left( \gamma_{xy}^2 + \gamma_{xz}^2 + \gamma_{yz}^2 \right) \right]}.
+	\varepsilon_\text{ekv} = \frac{1}{1+\mu} \sqrt{\frac{1}{2} \left[ (\varepsilon_x-\varepsilon_y)^2 + (\varepsilon_x-\varepsilon_z)^2 + (\varepsilon_y-\varepsilon_z)^2 + \frac{6}{4} \left( \gamma_{xy}^2 + \gamma_{xz}^2 + \gamma_{xz}^2 \right) \right]}.
 \end{equation}
 Pro oceli v~plastické oblasti je Poissonovo číslo $\mu=\num{0.5}$, takže platí
 \begin{equation}
-	\varepsilon_\text{ekv} = \frac{2}{3} \sqrt{\frac{1}{2} \left[ (\varepsilon_x-\varepsilon_y)^2 + (\varepsilon_x-\varepsilon_z)^2 + (\varepsilon_y-\varepsilon_z)^2 + \frac{6}{4} \left( \gamma_{xy}^2 + \gamma_{xz}^2 + \gamma_{yz}^2 \right) \right]},
+	\varepsilon_\text{ekv} = \frac{2}{3} \sqrt{\frac{1}{2} \left[ (\varepsilon_x-\varepsilon_y)^2 + (\varepsilon_x-\varepsilon_z)^2 + (\varepsilon_y-\varepsilon_z)^2 + \frac{6}{4} \left( \gamma_{xy}^2 + \gamma_{xz}^2 + \gamma_{xz}^2 \right) \right]},
 \end{equation}
 případně ve 2D (rovinná deformace)
 \begin{equation}

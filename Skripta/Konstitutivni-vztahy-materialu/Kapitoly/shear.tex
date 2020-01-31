@@ -1,5 +1,5 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2016-10-18
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-11-19
 
 \subsection{Shear}
 Jak \uv{simple shear}, tak \uv{pure shear} je zvykem používat ve smyslu deformace. Oba stavy deformace jsou teoreticky ekvivalentní, v~praxi tomu však tak nemusí být (není snadné pro obecný Poissonův poměr $\mu$ realizovat příslušné stavy deformace, pro $\mu = \num{0.5}$ je to snazší).
@@ -28,6 +28,7 @@ Praktická realizace:
 	\caption{Simple shear experiment}
 	\label{fig:simple-shear-experiment}
 \end{figure}
+Test je vhodný pro poddajné pěnové materiály, u~nichž nelze realizovat ekvivalenty čistého smyku v~rovinné deformaci.
 
 \subsubsection{Pure shear}
 \begin{figure}[H]
@@ -44,7 +45,7 @@ Praktická realizace:
 \item hlavní osy deformace se v~průběhu vzrůstající úrovně deformace nenatáčí
 \end{itemize}
 
-\subsubsection{Vysvětlení vzájemné ekvivalence}
+\subsubsection{Vysvětlení vzájemné ekvivalence obou testů}
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=4cm]{shear-vzajemna-ekvivalence}
@@ -52,4 +53,12 @@ Praktická realizace:
 	\label{fig:shear-vzajemna-ekvivalence}
 \end{figure}
 
-Na případu „simple shear“ lze pro danou úroveň deformace (gama) vždy nalézt na deformovaném vzorku ortogonální (pravoúhlý) element, kterému v nedeformované konfiguraci odpovídá rovněž ortogonální element. Tedy na takovém elementu neproběhl smyk vůči jeho hranám -- element se pouze cely natočil, v jednom směru natáhl a~v~druhém stlačil (volumetrická změna $= 0$). Stav deformace pro tento element je z~podstaty věci ekvivalentní stavu „pure shear“. Jediný rozdíl je v NATÁČENÍ hlavních os deformace,  proto také zápis obou typů deformací do podoby deformačního gradientu je vzájemně odlišný -- deformační gradient obsahuje totiž i~rotaci tělesa („rigid body rotation“).
+Na případu \enquote{simple shear} lze pro danou úroveň deformace (gama) vždy nalézt na deformovaném vzorku ortogonální (pravoúhlý) element, kterému v nedeformované konfiguraci odpovídá rovněž ortogonální element. Tedy na takovém elementu neproběhl smyk vůči jeho hranám -- element se pouze cely natočil, v jednom směru natáhl a~v~druhém stlačil (volumetrická změna $= 0$). Stav deformace pro tento element je z~podstaty věci ekvivalentní stavu \enquote{pure shear}. Jediný rozdíl je v~NATÁČENÍ hlavních os deformace,  proto také zápis obou typů deformací do podoby deformačního gradientu je vzájemně odlišný -- deformační gradient obsahuje totiž i~rotaci tělesa („rigid body rotation“).
+
+\begin{figure}[H]
+	\centering
+%	\includegraphics[height=4cm]{}
+	\caption{Možné rozpory při záměně ekvivalentů smykové napjatosti}
+%	\label{fig:}
+\end{figure}
+

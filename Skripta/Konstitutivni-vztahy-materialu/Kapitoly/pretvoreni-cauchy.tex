@@ -1,7 +1,7 @@
 % !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2016-10-10
+% !TeX lastmodified = 2019-10-23
 
-\subsection{Cauchyho (logaritmický) tenzor přetvoření}
+\subsection{Tenzor logaritmického přetvoření (Cauchyho, Henckyho)}
 Nedostatky tenzorů konečných přetvoření:
 \begin{itemize}
 	\item Green-Lagrange: změny délek jsou stále vztahovány k~původním hodnotám, zatímco aktuální již mohou být v průběhu procesu zatěžování významně odlišné.
@@ -20,12 +20,17 @@ Přetvoření úsečky o~původní délce $X_{i0}$, která se vlivem zatížení
 	= \ln(\lambda_i)
 \end{equation}
 
-\subsubsection{Tenzorová formulace Cauchyho tenzoru přetvoření}
+\subsubsection{Složky tenzoru Cauchyho přetvoření}
 
 Složky tohoto tenzoru jsou rovny přirozeným logaritmům odpovídajících složek tenzoru deformačního gradientu.
 
-
-Souřadnice tohoto tenzoru jsou tedy rovny přirozeným logaritmům odpovídajících souřadnic tenzoru deformačního gradientu.
 \begin{equation}
 	E^C_{ij} = \ln(F_{ij}) = \frac{1}{2} \ln(C_{ij})
 \end{equation}
+
+K~exaktnímu vyjádření se využívá tenzor pravého protažení $\bm{U}$.
+\begin{equation}
+E^C_{ij} = \ln(U_{ij}) = \ln\sqrt{F_{ik} F_{jk}}
+\end{equation}
+
+Henckyho definice se liší využitím tenzoru levého protažení $\bm{V}$.

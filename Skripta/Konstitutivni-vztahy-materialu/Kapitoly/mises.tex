@@ -1,5 +1,5 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-12-10
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-12-04
 
 \subsection{Misesova mezní podmínka energetická formulace}
 Ekvivalentní napětí podle von Misese je v~kurzu PP na FSI v Brně odvozováno jako podmínka plasticity (HMH), založená na velikosti oktaedrického smykového napětí.
@@ -88,7 +88,7 @@ Zavede-li se redukované napětí vztahem
 	= \frac{3}{2} (\bm{\sigma}' \!:\! \bm{\sigma}')
 	\:\Leftrightarrow\: \sigma_{ij}' \sigma_{ij}',
 \end{equation}
-pak lze deviátorovou část energie napjatosti $w_d$ zapsat následovně:
+který je založen na deviátoru ekvivalentní jednoosé napjatosti, pak lze deviátorovou část energie napjatosti $w_d$ zapsat následovně:
 \begin{equation}
 	w_d = \frac{\sigma_\text{ekv}^2}{6 G}.
 \end{equation}
@@ -109,7 +109,7 @@ Nejsnadněji lze shodu obou přístupů ukázat pomocí energetické podmínky T
 	+ \left(\frac{\sigma_T}{\sigma_{PT}}\right)^2
 	+ \left(\frac{\tau_{LT}}{\tau_P}\right)^2 < 1,
 \end{equation}
-kde indexy $L$, $T$ označují hlavní směry materiálu a~index $P$ pevnost v~daném směru.
+kde indexy $L$, $T$ označují hlavní směry materiálu a~index $P$ pevnost v~daném směru. Tato podmínka byla odvozena Hillem na základě deviátorové energie deformace jako podmínka plasticity a~modifikována Tsaiem na podmínku pevnosti.
 
 Po zjednodušení na materiál izotropní ($\sigma_{PL}= \sigma_{PT} = \sigma_P$) a~zavedení pevnosti ve smyku podle Misesovy podmínky ve tvaru
 \begin{equation}

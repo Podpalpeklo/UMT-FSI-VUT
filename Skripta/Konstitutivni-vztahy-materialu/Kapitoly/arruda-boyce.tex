@@ -1,5 +1,5 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-10-30
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
+% !TeX lastmodified = 2019-11-06
 
 \subsection{Model Arruda-Boyce}\label{sec:arruda-boyce}
 Tento model\footnote{Arruda EM, Boyce  MC: A three-dimensional constitutive model for large stretch behavior of rubber elastic materials. J. Mechanics and Physics of Solids, 1993, Vol. 41/2, pp. 389-412.} na rozdíl od předchozích modelů ryze fenomenologických vychází ze struktury materiálu, tvořené vláknitými zvlněnými řetězci makromolekul elastomeru.
@@ -22,7 +22,7 @@ Dříve navržená zjednodušení (třířetězcový model krychlový, čtyřře
 	\label{fig:ctyrretezcovy-model-tetraedricky}
 \end{figure}
 
-Model Arruda-Boyce zavádí hexagonální buňku (krychli) s~rohy propojenými s~jejím středem pomocí osmi molekulárních řetězců -- proto někdy nazýván \uv{8-chain model}.
+Model Arruda-Boyce zavádí hexagonální buňku (krychli) s~rohy propojenými s~jejím středem pomocí osmi molekulárních řetězců -- proto někdy nazýván \uv{8-chain model}. U~něj se všechny řetězce při jakémkoli deformačním modu protahují.
 
 \begin{figure}[H]
 	\centering
@@ -122,6 +122,16 @@ Pak protažení tohoto řetězce je
 	= \sqrt{\frac{I_1}{3}}
 \end{equation}
 Dosazením (\ref{eq:protazeni-retezce}) do (\ref{eq:deformacni-prace-izotermickeho-deje}) dostaneme energii $W$ jako funkci $I_1$.
+
+Protažení jakéhokoli řetězce $\lambda_\text{chain}$ při jednoosém tahu i~tlaku vychází z~podmínky nestlačitelnosti materiálu
+\begin{equation}
+	\lambda_1 \lambda_2 \lambda_3 = 1 \Rightarrow \lambda_2 = \lambda_3 = \frac{1}{\sqrt{\lambda_1}}.
+\end{equation}
+Pak dosazením do (\ref{eq:protazeni-retezce}) dostaneme pro protažení řetězce 
+\begin{equation}
+	\lambda_\text{chain} = \frac{r_\text{chain}}{r_0} = \sqrt{\frac{\lambda_1^2 + \frac{2}{\lambda_1}}{3}}
+\end{equation}
+Lze snadno ukázat, že tato hodnota je větší než jedna pro jakékoli $\lambda_1$, tedy všechny řetězce se natahují.
 
 Aplikujeme-li nyní pro popis náhodné prostorové distribuce řetězců polynomický rozvoj inverzní Langevinovy funkce a~použijeme jeho prvních pět členů, dostaneme deformační energii:
 \begin{multline}

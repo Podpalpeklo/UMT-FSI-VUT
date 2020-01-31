@@ -1,28 +1,39 @@
 % !TeX root = skripta-konstitutivni-vztahy.tex
-% !TeX lastmodified = 2018-12-11
+% !TeX lastmodified = 2019-12-07
 
 \subsection{Lode}
 \subsubsection{Lodeho parametr}
 Dalším významným parametrem pro tvárné porušení vztaženým ke stavu napjatosti je Lodeho parametr $\mu$:
 \begin{equation}
-	\mu = \frac{2 \sigma_2 - \sigma_1 - \sigma_3}{\sigma_1 - \sigma_3}
+	\mu
+	= \frac{\sigma_2 - \frac{\sigma_1 + \sigma_3}{2}}{\frac{\sigma_1 - \sigma_3}{2}}
+	= \frac{2 \sigma_2 - \sigma_1 - \sigma_3}{\sigma_1 - \sigma_3}
 \end{equation}
 
-Lodeho parametr nabývá hodnot v~intervalu $-1 \leq \mu \leq 1$ a~charakterizuje typ napjatosti z~hlediska polohy hlavního napětí $\sigma_2$ vůči $\sigma_1$ a~$\sigma_3$. Jeho význam se různí podle materiálů, je velký např. u~hliníkových slitin, u~ocelí pak při nízkých faktorech triaxiality napětí.
-\begin{figure}[H]\centering\begin{tabular}{lll}
+Lodeho parametr nabývá hodnot v~intervalu $-1 \leq \mu \leq 1$
+a~charakterizuje typ napjatosti z~hlediska polohy hlavního napětí $\sigma_2$ vůči $\sigma_1$ a~$\sigma_3$
+(v~Mohrově diagramu to je relativní vzdálenost napětí $\sigma_2$ od středu nevětší kružnice).
+Jeho význam se různí podle materiálů, je velký např. u~hliníkových slitin,
+u~ocelí pak při nízkých faktorech triaxiality napětí.
+\begin{figure}[H]\centering
+\begin{tabular}{lll}
 	\toprule
-	Název            &       $\mu$        &     Hlavní napětí      \\ \midrule
-	Smyková           &         $0$          &     $\sigma_3= -\sigma_1; \sigma_2=0$      \\
-	Jednoosá tahová       &         $-1$         &     $\sigma_1>0; \sigma_2= \sigma_3=0$     \\
-	Dvouosá tahová rovnoměrná  &         $1$          &     $\sigma_1=\sigma_2>0; \sigma_3=0$      \\
-	Jednoosá tlaková      &         $1$          &     $\sigma_3<0; \sigma_2= \sigma_1=0$     \\
-	Dvouosá tlaková rovnoměrná &         $-1$         &     $\sigma_3=\sigma_2<0; \sigma_1=0$      \\
-	Trojosá rovnoměrná     & Neurčitý výraz $0/0$ & $\sigma_1=\sigma_2=\sigma_3>0$\\
-\bottomrule
-\end{tabular}\end{figure}
+	Název                      & $\mu$                & Hlavní napětí                      \\
+	\midrule
+	Smyková                    & $0$                  & $\sigma_3= -\sigma_1; \sigma_2=0$  \\
+	Jednoosá tahová            & $-1$                 & $\sigma_1>0; \sigma_2= \sigma_3=0$ \\
+	Dvouosá tahová rovnoměrná  & $1$                  & $\sigma_1=\sigma_2>0; \sigma_3=0$  \\
+	Jednoosá tlaková           & $1$                  & $\sigma_3<0; \sigma_2= \sigma_1=0$ \\
+	Dvouosá tlaková rovnoměrná & $-1$                 & $\sigma_3=\sigma_2<0; \sigma_1=0$  \\
+	Trojosá rovnoměrná         & Neurčitý výraz $0/0$ & $\sigma_1=\sigma_2=\sigma_3>0$     \\
+	\bottomrule
+\end{tabular}
+\end{figure}
 
 \subsubsection{Lodeho úhel}
-Alternativním vyjádřením Lodeho parametru je Lodeho úhel $\theta$, který představuje normalizovaný arkustangens Lodeho parametru $\mu$; lze jej také vyjádřit pomocí normalizovaného třetího invariantu deviátoru napětí $\xi$:
+Alternativním vyjádřením Lodeho parametru je Lodeho úhel $\theta$,
+který představuje normalizovaný arkustangens Lodeho parametru $\mu$;
+lze jej také vyjádřit pomocí normalizovaného třetího invariantu deviátoru napětí $\xi$:
 \begin{equation}
 	\theta = \arctan\left(\frac{\mu}{\sqrt{3}}\right)
 \end{equation}
@@ -48,6 +59,9 @@ kde
 	\item[$\sigma_m$] je redukované napětí podle von Misesovy podmínky plasticity.
 \end{description}
 
-Lodeho úhel nabývá hodnot v~intervalu $-\frac{\pi}{6} \leq \theta \leq \frac{\pi}{6}$, normalizovaný třetí invariant deviátoru napětí je v~intervalu $-1 \leq \xi \leq 1$. 
+Lodeho úhel nabývá hodnot v~intervalu $-\frac{\pi}{6} \leq \theta \leq \frac{\pi}{6}$,
+normalizovaný třetí invariant deviátoru napětí je v~intervalu $-1 \leq \xi \leq 1$. 
 
-Především v mezních podmínkách porušení má faktor triaxiality napětí a~Lodeho parametr velký význam, protože ovlivňují vznik porušení. Experimentální ověřování mezních podmínek je třeba proto provádět při různých hodnotách těchto parametrů; lze je měnit typem namáhání vzorku (tah, tlak, biaxiální tah-tlak, krut, různé jejich kombinace) nebo změnou jeho geometrie (poloměru vrubu).
+Především v mezních podmínkách porušení má faktor triaxiality napětí a~Lodeho parametr velký význam, protože ovlivňují vznik porušení.
+Experimentální ověřování mezních podmínek je třeba proto provádět při různých hodnotách těchto parametrů;
+lze je měnit typem namáhání vzorku (tah, tlak, biaxiální tah-tlak, krut, různé jejich kombinace) nebo změnou jeho geometrie (poloměru vrubu).
