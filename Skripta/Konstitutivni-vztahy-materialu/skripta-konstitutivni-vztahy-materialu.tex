@@ -19,7 +19,7 @@
 % Písmo Latin Modern
 \usepackage{lmodern}
 % Barvy
-\usepackage[rgb]{xcolor}
+\usepackage[rgb,dvipsnames]{xcolor}
 \definecolor{fsimodra}{RGB}{0,79,113}
 \definecolor{fsimodra}{cmyk}{1,0.27,0.1,0.56}
 % Uvozovky
@@ -42,9 +42,13 @@
 % Odsazení odstavců
 \parindent=0mm
 % Náčrty
-%\usepackage{tikz}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzsetexternalprefix{Obrazky/}
+\tikzexternalize[optimize command away=\includepdf]
+\usepackage{pgfplots}
 % Matematické symboly
-\usepackage{gensymb, amsmath, amssymb}
+\usepackage{amsmath, amssymb}
 % Diferenciální operátor
 \newcommand{\diff}{\,\mathrm{d}}
 % Číslování rovnic
@@ -74,7 +78,7 @@
 \nopagecolor
 \color{black}
 \pagenumbering{roman}
-\tableofcontents
+%\tableofcontents
 \clearpage
 \pagenumbering{arabic}
 \include{Kapitoly/kapitola-mechanika-kontinua}

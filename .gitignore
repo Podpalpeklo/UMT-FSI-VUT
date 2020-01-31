@@ -1,9 +1,11 @@
 *.aux
+*.auxlock
 *.bbl
 *.blg
 *.cfg
+*.dpth
 *.log
+*.md5
 *.out
-*.pdf
 *.synctex.gz
 *.toc

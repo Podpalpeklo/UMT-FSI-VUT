@@ -1,4 +1,4 @@
-% !TeX root = skripta-konstitutivni-vztahy.tex
+% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
 % !TeX lastmodified = 2016-12-06
 
 \subsection{Vzájemné přepočtové vztahy pro tenzory přetvoření}
@@ -50,9 +50,27 @@ Cauchy:
 \end{align}
 % Doplnil bych graf v tlaku a řekl které jsou konečné
 
+\tikzsetnextfilename{porovnani-tenzoru-pretvoreni}
 \begin{figure}[H]
 	\centering
-	\includegraphics{Obrazky/tenzory-pretvoreni}
-	\caption{Přetvoření v tahu}
-	\label{fig:tenzory-pretvoreni}
+	\begin{tikzpicture}
+	\begin{axis} [xlabel = {Protažení $\lambda_1$},
+		ylabel = {Přetvoření},
+		grid,
+		height = 6cm,
+		width = 10cm,
+		xmin = 0, xmax = 4,
+		ymin = -2, ymax = 4,
+		xtick distance=1, ytick distance=1,
+		legend pos={north west},
+		legend cell align={left}]
+		\addplot[domain=0:4, samples=100, Goldenrod, thick] {1/2*(x*x-1)};
+		\addplot[domain=0:4, samples=100, Green, thick] {x-1};
+		\addplot[domain=0:4, samples=100, Blue, thick] {ln(x)};
+		\addplot[domain=0:4, samples=100, Red, thick] {1/2*(1-1/(x*x)};
+		\legend{$E_L$, $\varepsilon$, $E_C$, $E_A$}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Porovnání tenzorů přetvoření při~jednoosém tahu}
+	\label{fig:porovnani-tenzoru-pretvoreni}
 \end{figure}
