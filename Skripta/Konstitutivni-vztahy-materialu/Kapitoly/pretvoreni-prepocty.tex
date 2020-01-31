@@ -54,20 +54,15 @@ Cauchy:
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
-	\begin{axis} [xlabel = {Protažení $\lambda_1$},
-		ylabel = {Přetvoření},
-		grid,
-		height = 6cm,
-		width = 10cm,
-		xmin = 0, xmax = 4,
-		ymin = -2, ymax = 4,
-		xtick distance=1, ytick distance=1,
-		legend pos={north west},
-		legend cell align={left}]
-		\addplot[domain=0:4, samples=100, Goldenrod, thick] {1/2*(x*x-1)};
-		\addplot[domain=0:4, samples=100, Green, thick] {x-1};
-		\addplot[domain=0:4, samples=100, Blue, thick] {ln(x)};
-		\addplot[domain=0:4, samples=100, Red, thick] {1/2*(1-1/(x*x)};
+	\begin{axis} [xlabel = {Protažení $\lambda_1$}, ylabel = {Přetvoření},
+		grid, height = 6cm, width = 10cm,
+		xmin = 0, xmax = 4, ymin = -2, ymax = 4,
+		xtick distance = 1, ytick distance = 1,
+		legend pos = {north west}, legend cell align={left}]
+		\addplot[domain=0:4, samples=50, dashed, thick, Goldenrod] {1/2*(x*x-1)};
+		\addplot[domain=0:4, samples=2, solid, thick, Green] {x-1};
+		\addplot[domain=0:4, samples=50, dotted, thick, Blue] {ln(x)};
+		\addplot[domain=0:4, samples=50, dashdotted, thick, Red] {1/2*(1-1/(x*x)};
 		\legend{$E_L$, $\varepsilon$, $E_C$, $E_A$}
 	\end{axis}
 	\end{tikzpicture}

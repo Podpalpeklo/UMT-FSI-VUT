@@ -2,31 +2,29 @@
 % !TeX lastmodified = 2019-04-10
 
 \subsection{Tenzor deformačního gradientu}
-Složkami tenzoru deformačního gradientu $\bm{F}$ v~hlavním souřadnicovém systému jsou poměrná protažení
+Obecně lze zapsat ve tvaru
 \begin{equation}
-	\lambda_x  = \frac{\partial x}{\partial X}
-	\qquad
-	\lambda_y  = \frac{\partial y}{\partial Y}
-	\qquad
-	\lambda_z  = \frac{\partial z}{\partial Z}
-\end{equation}
-Obecně je lze zapsat ve tvaru
-\begin{equation}
-	\lambda_{ij} = \frac{\partial x_i}{\partial X_j}
+\bm{F} = \frac{\partial \bm{x}}{\partial \bm{X}}
+\quad\leftrightarrow\quad
+F_{ij} = \frac{\partial x_i}{\partial X_j} = \begin{pmatrix}
+\frac{\partial x_1}{\partial X_1} & \frac{\partial x_1}{\partial X_2} & \frac{\partial x_1}{\partial X_3}\\
+\frac{\partial x_2}{\partial X_1} & \frac{\partial x_2}{\partial X_2} & \frac{\partial x_2}{\partial X_3}\\
+\frac{\partial x_3}{\partial X_1} & \frac{\partial x_3}{\partial X_2} & \frac{\partial x_3}{\partial X_3}
+\end{pmatrix}
 \end{equation}
 
-Úplný maticový zápis v~obecném souřadnicovém systému je
+V~hlavním souřadnicovém systému jsou složkami tenzoru deformačního gradientu $\hat{\bm{F}}$ poměrná protažení $\lambda_i$
 \begin{equation}
-	\bm{F} = \frac{\partial x_i}{\partial X_j} = \left(\begin{matrix}
-		\frac{\partial x_1}{\partial X_1} & \frac{\partial x_1}{\partial X_2} & \frac{\partial x_1}{\partial X_3}\\
-		\frac{\partial x_2}{\partial X_1} & \frac{\partial x_2}{\partial X_2} & \frac{\partial x_2}{\partial X_3}\\
-		\frac{\partial x_3}{\partial X_1} & \frac{\partial x_3}{\partial X_2} & \frac{\partial x_3}{\partial X_3}
-	\end{matrix}\right)
+\lambda_1  = \frac{\partial x}{\partial X}
+\qquad
+\lambda_2  = \frac{\partial y}{\partial Y}
+\qquad
+\lambda_3  = \frac{\partial z}{\partial Z}
 \end{equation}
 
 Třetí invariant tenzoru deformačního gradientu je dán determinantem této matice $\bm{F}$, který lze nejsnáze určit z~hlavních hodnot poměrných protažení pomocí vztahu
 \begin{equation}
-	J = \det(\bm{F}) = \lambda_1 \lambda_2 \lambda_3
+J = \det(\bm{F}) = \lambda_1 \lambda_2 \lambda_3
 \end{equation}
 
 \subsubsection{Vlastnosti tenzoru deformačního gradientu}
