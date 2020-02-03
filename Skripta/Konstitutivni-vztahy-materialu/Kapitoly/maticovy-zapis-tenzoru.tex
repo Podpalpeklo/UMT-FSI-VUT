@@ -1,0 +1,163 @@
+% !TeX root = ../skripta-konstitutivni-vztahy-materialu.tex
+
+\section{Maticový zápis tenzorů}
+Symetrický tenzor druhého řádu $3 \times 3$ se složkami $i,j \in \{1,2,3\}$ lze zapsat jako vektor se složkami $a \in \{1,2,3,4,5,6\}$
+\begin{equation*}
+	T_{ij} =
+	\begin{pmatrix}
+		T_{11} & T_{12} & T_{13} \\ & T_{22} & T_{23} \\ \text{\small sym.} & & T_{33} \\
+	\end{pmatrix}
+	\quad\rightarrow\quad
+	T_a =
+	\begin{pmatrix}
+		T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \\ T_6 \\
+	\end{pmatrix}
+\end{equation*}
+a~symetrický tenzor čtvrtého řádu $3 \times 3 \times 3 \times 3$ se složkami $i,j,k,l \in \{1,2,3\}$ lze zapsat jako matici $6 \times 6$ se složkami $a,b \in \{1,2,3,4,5,6\}$
+\begin{equation*}
+	T_{ijkl}
+	\quad\rightarrow\quad
+	T_{ab} =
+	\begin{pmatrix}
+		T_{11} & T_{12} & T_{13} & T_{14} & T_{15} & T_{16} \\
+		& T_{22} & T_{23} & T_{24} & T_{25} & T_{26} \\
+		& & T_{33} & T_{34} & T_{35} & T_{36} \\
+		& & & T_{44} & T_{45} & T_{46} \\
+		& \text{\small sym.} & & & T_{55} & T_{56} \\
+		& & & & & T_{66} \\
+	\end{pmatrix}
+\end{equation*}
+
+Při zápisu tenzoru napětí a~tenzoru přetvoření pomocí vektorů je potřeba zachovat hodnotu hustoty elastické energie, která je produktem $2E = \bm{\sigma}\kontr\bm{\varepsilon} = \{\sigma\}^T\cdot\{\varepsilon\}$. Tradiční Voigtův\footnote{Woldemar \textsc{Voigt} (Němec, 1850---1919)} zápis i~méně používaný Kelvinův\footnote{William \textsc{Thomson} -- lord Kelvin (Skot, 1824---1907)}-Mandelův\footnote{Jean \textsc{Mandel} (Francouz, 1907-1982)} zápis toho dosahují různými mapováními.
+
+\subsection{Voigtův zápis}
+Tenzor napětí
+\begin{equation*}
+	\sigma_{ij} =
+	\begin{pmatrix}
+		\sigma_{11} & \sigma_{12} & \sigma_{13} \\ & \sigma_{22} & \sigma_{23} \\ \text{sym.} & & \sigma_{33} \\
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\sigma_{11} & \tau_{12} & \tau_{13} \\ & \sigma_{22} & \tau_{23} \\ \text{sym.} & & \sigma_{33} \\
+	\end{pmatrix}
+	\quad\rightarrow\quad
+	\sigma_a =
+	\begin{pmatrix}
+		\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \\
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \tau_{23} \\ \tau_{13} \\ \tau_{12} \\
+	\end{pmatrix}
+\end{equation*}
+
+Tenzor přetvoření
+\begin{equation*}
+	\varepsilon_{ij} =
+	\begin{pmatrix}
+		\varepsilon_{11} & \varepsilon_{12} & \varepsilon_{13} \\ & \varepsilon_{22} & \varepsilon_{23} \\ \text{\small sym.} & & \varepsilon_{33} \\
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\varepsilon_{11} & \frac{\gamma_{12}}{2} & \frac{\gamma_{13}}{2} \\ & \varepsilon_{22} & \frac{\gamma_{23}}{2} \\ \text{\small sym.} & & \varepsilon_{33} \\
+	\end{pmatrix}
+	\quad\rightarrow\quad
+	\varepsilon_{a} =
+	\begin{pmatrix}
+		\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ 2 \varepsilon_{23} \\ 2 \varepsilon_{13} \\ 2 \varepsilon_{12} \\
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \gamma_{23} \\ \gamma_{13} \\ \gamma_{12} \\
+	\end{pmatrix}
+\end{equation*}
+
+Tenzor tuhosti
+\begin{equation*}
+	C_{ijkl}
+	\quad\rightarrow\quad
+	C_{ab} =
+	\begin{pmatrix}
+	C_{1111} & C_{1122} & C_{1133} & C_{1123} & C_{1113} & C_{1112} \\
+	         & C_{2222} & C_{2233} & C_{2223} & C_{2213} & C_{2212} \\
+	         &          & C_{3333} & C_{3323} & C_{3313} & C_{3312} \\
+	         &          &          & C_{2323} & C_{2313} & C_{2312} \\
+	      & \text{\small sym.} &          &          & C_{1313} & C_{1112} \\
+	         &          &          &          &          & C_{1212} \\
+	\end{pmatrix}
+\end{equation*}
+
+Výhody:
+\begin{itemize}
+	\item zachování hustoty elastické energie
+	\item zachování složek tenzoru tuhosti
+\end{itemize}
+
+Nevýhody:
+\begin{itemize}
+	\item napětí a~přetvoření je mapováno různými způsoby
+	\item norma tenzorů se nezachovává
+\end{itemize}
+
+\subsection{Kelvinův-Mandelův zápis}
+Tenzor napětí
+\begin{equation*}
+\sigma_{ij} =
+\begin{pmatrix}
+\sigma_{11} & \sigma_{12} & \sigma_{13} \\ & \sigma_{22} & \sigma_{23} \\ \text{sym.} & & \sigma_{33} \\
+\end{pmatrix} =
+\begin{pmatrix}
+\sigma_{11} & \tau_{12} & \tau_{13} \\ & \sigma_{22} & \tau_{23} \\ \text{sym.} & & \sigma_{33} \\
+\end{pmatrix}
+\quad\rightarrow\quad
+\sigma_a =
+\begin{pmatrix}
+\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sqrt{2} \sigma_{23} \\ \sqrt{2} \sigma_{13} \\ \sqrt{2} \sigma_{12} \\
+\end{pmatrix} =
+\begin{pmatrix}
+\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sqrt{2} \tau_{23} \\ \sqrt{2} \tau_{13} \\ \sqrt{2} \tau_{12} \\
+\end{pmatrix}
+\end{equation*}
+
+Tenzor přetvoření
+\begin{equation*}
+\varepsilon_{ij} =
+\begin{pmatrix}
+\varepsilon_{11} & \varepsilon_{12} & \varepsilon_{13} \\ & \varepsilon_{22} & \varepsilon_{23} \\ \text{\small sym.} & & \varepsilon_{33} \\
+\end{pmatrix} =
+\begin{pmatrix}
+\varepsilon_{11} & \frac{\gamma_{12}}{2} & \frac{\gamma_{13}}{2} \\ & \varepsilon_{22} & \frac{\gamma_{23}}{2} \\ \text{\small sym.} & & \varepsilon_{33} \\
+\end{pmatrix}
+\quad\rightarrow\quad
+\varepsilon_{a} =
+\begin{pmatrix}
+\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \sqrt{2} \varepsilon_{23} \\ \sqrt{2} \varepsilon_{13} \\ \sqrt{2} \varepsilon_{12} \\
+\end{pmatrix} =
+\begin{pmatrix}
+\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \frac{\sqrt{2}}{2} \gamma_{23} \\ \frac{\sqrt{2}}{2} \gamma_{13} \\ \frac{\sqrt{2}}{2} \gamma_{12} \\
+\end{pmatrix}
+\end{equation*}
+
+Tenzor tuhosti
+\begin{equation*}
+C_{ijkl}
+\quad\rightarrow\quad
+C_{ab} =
+\begin{pmatrix}
+C_{1111} & C_{1122} & C_{1133} & \sqrt{2} C_{1123} & \sqrt{2} C_{1113} & \sqrt{2} C_{1112} \\
+& C_{2222} & C_{2233} & \sqrt{2} C_{2223} & \sqrt{2} C_{2213} & \sqrt{2} C_{2212} \\
+&          & C_{3333} & \sqrt{2} C_{3323} & \sqrt{2} C_{3313} & \sqrt{2} C_{3312} \\
+&          &          & 2 C_{2323} & 2 C_{2313} & 2 C_{2312} \\
+& \text{\small sym.} &          &          & 2 C_{1313} & 2 C_{1112} \\
+&          &          &          &          & 2 C_{1212} \\
+\end{pmatrix}
+\end{equation*}
+
+Výhody:
+\begin{itemize}
+	\item zachování hustoty elastické energie
+	\item zachování normy tenzorů
+	\item napětí a~přetvoření je mapováno stejným způsobem
+\end{itemize}
+
+Nevýhody:
+\begin{itemize}
+	\item složky tenzoru tuhosti se nezachovávají
+\end{itemize}

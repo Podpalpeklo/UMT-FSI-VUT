@@ -1,17 +1,7 @@
-% !TeX root = skripta-konstitutivni-vztahy-materialu.tex
-% !TeX lastmodified = 2019-11-27
+% !TeX root = ../skripta-konstitutivni-vztahy-materialu.tex
 
 \subsection{Tenzor protažení (stretch tensor)}
 I~v~nedeformovaném stavu elementu může mít matice definující tenzor deformačního gradientu $\bm{F}$ složky odlišné od jednotkové matice; je to dáno případnou rotací elementu v~důsledku velkých deformací tělesa.  Polární dekompozicí tenzoru $\bm{F}$ lze tento rozložit na tenzor rotace $\bm{R}$ (vyjadřující rotaci tuhého tělesa) a~tenzor protažení $\bm{U}$ nebo $\bm{V}$ (popisující deformaci tělesa). Tento tenzor je již symetrický a~energeticky konjugovaný se symetrickou částí Biotova tenzoru napětí $\bm{T_B}$. 
-
-Tenzor deformačního gradientu je definován vztahem
-\begin{equation}
-	F_{iJ} := \frac{\partial x_i}{\partial X_J}
-\end{equation}
-který můžeme přepsat do maticové podoby s~konečnými diferencemi namísto derivací
-\begin{equation}
-	\bm{F} = \frac{\Delta \bm{x}}{\Delta \bm{X}}
-\end{equation}
 
 Polární dekompozice tenzoru $\bm{F}$ pak spočívá v~jeho rozložení na tenzor 
 rotace $\bm{R}$ a~pravý nebo levý tenzor protažení (stretch tensor) $\bm{U}$ nebo $\bm{V}$:
@@ -26,19 +16,22 @@ Zde se využívá ortogonality tenzoru rotace $\bm{R}$, pro který tedy inverzn�
 
 Tenzor rotace $\bm{R}$ je v rovině (2D zjednodušení) definován vztahem
 \begin{equation}
-	\bm{R} = \left(\begin{matrix}
+	\bm{R} = \begin{pmatrix}
 		\cos(\psi) & \sin(\psi)\\
 		-\sin(\psi) & \cos(\psi)\\
-	\end{matrix}\right),
+	\end{pmatrix},
 \end{equation}
 kde úhel $\psi$ lze určit ze složek tenzoru deformačního gradientu pomocí vztahu
 \begin{equation}
 	\psi = \arctan\left(\frac{F_{12} - F_{21}}{F_{11} + F_{22}}\right)
 \end{equation}
 
-Pomocí tenzorů protažení $\bm{U}$ a~$\bm{V}$ lze pak definovat také Cauchyho-Greenův tenzor deformace $C$ a~Fingerův tenzor deformace $\bm{B}$ pomocí vztahů:
+Pomocí tenzorů protažení $\bm{U}$ a~$\bm{V}$ lze definovat tenzor pravé Cauchyho-Greenovy deformace $C$
 \begin{equation}
-	\bm{C} = \bm{F}^T \bm{F} = \bm{U}^T \bm{U} = U^2; \quad
-	\bm{B} = \bm{F} \bm{F}^T = \bm{V} \bm{V}^T = V^2; \quad
+\bm{C} = \bm{F}^T \bm{F} = \bm{U}^T \bm{U} = U^2,
 \end{equation}
-Zde se navíc využívá faktu, že oba tyto tenzory jsou (na rozdíl od tenzoru deformačního gradientu $\bm{F}$) vždy symetrické. Hlavní složky tenzoru $\bm{U}$ i~$\bm{V}$ jsou stejné a představují hlavní poměrná protažení (principal stretches). 
+a~tenzor levé Cauchyho-Greenovy deformace $\bm{B}$
+\begin{equation}
+	\bm{B} = \bm{F} \bm{F}^T = \bm{V} \bm{V}^T = V^2.
+\end{equation}
+Zde se navíc využívá faktu, že oba tyto tenzory jsou (na rozdíl od tenzoru deformačního gradientu $\bm{F}$) vždy symetrické. Hlavní složky tenzoru $\bm{U}$ i~$\bm{V}$ jsou stejné a~představují hlavní poměrná protažení (principal stretches). 
