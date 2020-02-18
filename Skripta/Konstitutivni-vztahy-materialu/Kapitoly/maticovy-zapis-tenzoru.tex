@@ -1,7 +1,9 @@
 % !TeX root = ../skripta-konstitutivni-vztahy-materialu.tex
 
-\section{Maticový zápis tenzorů}
-Symetrický tenzor druhého řádu $3 \times 3$ se složkami $i,j \in \{1,2,3\}$ lze zapsat jako vektor se složkami $a \in \{1,2,3,4,5,6\}$
+\section{Zkrácený zápis tenzorů}
+Složky tenzoru v~prostoru $\mathbb{R}^3$ lze zkráceně zapsat v~prostoru $\mathbb{R}^6$. Motivací je snadný zápis konstitutivních vztahů a~menší náročnost na paměť a~počet výpočtů počítače.
+
+Symetrický tenzor druhého řádu $3 \times 3$, jehož složky mají indexy $i,j \in \{1,2,3\}$ lze zapsat jako vektor s~indexy $a \in \{1,2,3,4,5,6\}$
 \begin{equation*}
 	T_{ij} =
 	\begin{pmatrix}
@@ -13,7 +15,7 @@ Symetrický tenzor druhého řádu $3 \times 3$ se složkami $i,j \in \{1,2,3\}$
 		T_1 \\ T_2 \\ T_3 \\ T_4 \\ T_5 \\ T_6 \\
 	\end{pmatrix}
 \end{equation*}
-a~symetrický tenzor čtvrtého řádu $3 \times 3 \times 3 \times 3$ se složkami $i,j,k,l \in \{1,2,3\}$ lze zapsat jako matici $6 \times 6$ se složkami $a,b \in \{1,2,3,4,5,6\}$
+a~symetrický tenzor čtvrtého řádu $3 \times 3 \times 3 \times 3$, jehož složky mají indexy $i,j,k,l \in \{1,2,3\}$ lze zapsat jako matici $6 \times 6$ s~indexy $a,b \in \{1,2,3,4,5,6\}$
 \begin{equation*}
 	T_{ijkl}
 	\quad\rightarrow\quad
@@ -28,7 +30,7 @@ a~symetrický tenzor čtvrtého řádu $3 \times 3 \times 3 \times 3$ se složka
 	\end{pmatrix}
 \end{equation*}
 
-Při zápisu tenzoru napětí a~tenzoru přetvoření pomocí vektorů je potřeba zachovat hodnotu hustoty elastické energie, která je produktem $2E = \bm{\sigma}\kontr\bm{\varepsilon} = \{\sigma\}^T\cdot\{\varepsilon\}$. Tradiční Voigtův\footnote{Woldemar \textsc{Voigt} (Němec, 1850---1919)} zápis i~méně používaný Kelvinův\footnote{William \textsc{Thomson} -- lord Kelvin (Skot, 1824---1907)}-Mandelův\footnote{Jean \textsc{Mandel} (Francouz, 1907-1982)} zápis toho dosahují různými mapováními.
+V~mechanice je potřeba při zápisu tenzoru napětí a~tenzoru přetvoření pomocí vektorů zachovat hodnotu hustoty elastické energie, která je produktem $2E = \bm{\sigma}\kontr\bm{\varepsilon} = \{\sigma\}^T\cdot\{\varepsilon\}$. Tradiční Voigtův\footnote{Woldemar \textsc{Voigt} (Němec, 1850---1919)} zápis i~méně používaný Kelvinův\footnote{William \textsc{Thomson} -- lord Kelvin (Skot, 1824---1907)}-Mandelův\footnote{Jean \textsc{Mandel} (Francouz, 1907-1982)} zápis toho dosahují různými mapováními.
 
 \subsection{Voigtův zápis}
 Tenzor napětí
