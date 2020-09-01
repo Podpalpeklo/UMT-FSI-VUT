@@ -98,68 +98,68 @@ Nevýhody:
 	\item norma tenzorů se nezachovává
 \end{itemize}
 
-\subsection{Kelvinův-Mandelův zápis}
-Tenzor napětí
-\begin{equation*}
-\sigma_{ij} =
-\begin{pmatrix}
-\sigma_{11} & \sigma_{12} & \sigma_{13} \\ & \sigma_{22} & \sigma_{23} \\ \text{sym.} & & \sigma_{33} \\
-\end{pmatrix} =
-\begin{pmatrix}
-\sigma_{11} & \tau_{12} & \tau_{13} \\ & \sigma_{22} & \tau_{23} \\ \text{sym.} & & \sigma_{33} \\
-\end{pmatrix}
-\quad\rightarrow\quad
-\sigma_a =
-\begin{pmatrix}
-\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sqrt{2} \sigma_{23} \\ \sqrt{2} \sigma_{13} \\ \sqrt{2} \sigma_{12} \\
-\end{pmatrix} =
-\begin{pmatrix}
-\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sqrt{2} \tau_{23} \\ \sqrt{2} \tau_{13} \\ \sqrt{2} \tau_{12} \\
-\end{pmatrix}
-\end{equation*}
-
-Tenzor přetvoření
-\begin{equation*}
-\varepsilon_{ij} =
-\begin{pmatrix}
-\varepsilon_{11} & \varepsilon_{12} & \varepsilon_{13} \\ & \varepsilon_{22} & \varepsilon_{23} \\ \text{\small sym.} & & \varepsilon_{33} \\
-\end{pmatrix} =
-\begin{pmatrix}
-\varepsilon_{11} & \frac{\gamma_{12}}{2} & \frac{\gamma_{13}}{2} \\ & \varepsilon_{22} & \frac{\gamma_{23}}{2} \\ \text{\small sym.} & & \varepsilon_{33} \\
-\end{pmatrix}
-\quad\rightarrow\quad
-\varepsilon_{a} =
-\begin{pmatrix}
-\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \sqrt{2} \varepsilon_{23} \\ \sqrt{2} \varepsilon_{13} \\ \sqrt{2} \varepsilon_{12} \\
-\end{pmatrix} =
-\begin{pmatrix}
-\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \frac{\sqrt{2}}{2} \gamma_{23} \\ \frac{\sqrt{2}}{2} \gamma_{13} \\ \frac{\sqrt{2}}{2} \gamma_{12} \\
-\end{pmatrix}
-\end{equation*}
-
-Tenzor tuhosti
-\begin{equation*}
-C_{ijkl}
-\quad\rightarrow\quad
-C_{ab} =
-\begin{pmatrix}
-C_{1111} & C_{1122} & C_{1133} & \sqrt{2} C_{1123} & \sqrt{2} C_{1113} & \sqrt{2} C_{1112} \\
-& C_{2222} & C_{2233} & \sqrt{2} C_{2223} & \sqrt{2} C_{2213} & \sqrt{2} C_{2212} \\
-&          & C_{3333} & \sqrt{2} C_{3323} & \sqrt{2} C_{3313} & \sqrt{2} C_{3312} \\
-&          &          & 2 C_{2323} & 2 C_{2313} & 2 C_{2312} \\
-& \text{\small sym.} &          &          & 2 C_{1313} & 2 C_{1112} \\
-&          &          &          &          & 2 C_{1212} \\
-\end{pmatrix}
-\end{equation*}
-
-Výhody:
-\begin{itemize}
-	\item zachování hustoty elastické energie
-	\item zachování normy tenzorů
-	\item napětí a~přetvoření je mapováno stejným způsobem
-\end{itemize}
-
-Nevýhody:
-\begin{itemize}
-	\item složky tenzoru tuhosti se nezachovávají
-\end{itemize}
+%\subsection{Kelvinův-Mandelův zápis}
+%Tenzor napětí
+%\begin{equation*}
+%\sigma_{ij} =
+%\begin{pmatrix}
+%\sigma_{11} & \sigma_{12} & \sigma_{13} \\ & \sigma_{22} & \sigma_{23} \\ \text{sym.} & & \sigma_{33} \\
+%\end{pmatrix} =
+%\begin{pmatrix}
+%\sigma_{11} & \tau_{12} & \tau_{13} \\ & \sigma_{22} & \tau_{23} \\ \text{sym.} & & \sigma_{33} \\
+%\end{pmatrix}
+%\quad\rightarrow\quad
+%\sigma_a =
+%\begin{pmatrix}
+%\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sqrt{2} \sigma_{23} \\ \sqrt{2} \sigma_{13} \\ \sqrt{2} \sigma_{12} \\
+%\end{pmatrix} =
+%\begin{pmatrix}
+%\sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sqrt{2} \tau_{23} \\ \sqrt{2} \tau_{13} \\ \sqrt{2} \tau_{12} \\
+%\end{pmatrix}
+%\end{equation*}
+%
+%Tenzor přetvoření
+%\begin{equation*}
+%\varepsilon_{ij} =
+%\begin{pmatrix}
+%\varepsilon_{11} & \varepsilon_{12} & \varepsilon_{13} \\ & \varepsilon_{22} & \varepsilon_{23} \\ \text{\small sym.} & & \varepsilon_{33} \\
+%\end{pmatrix} =
+%\begin{pmatrix}
+%\varepsilon_{11} & \frac{\gamma_{12}}{2} & \frac{\gamma_{13}}{2} \\ & \varepsilon_{22} & \frac{\gamma_{23}}{2} \\ \text{\small sym.} & & \varepsilon_{33} \\
+%\end{pmatrix}
+%\quad\rightarrow\quad
+%\varepsilon_{a} =
+%\begin{pmatrix}
+%\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \sqrt{2} \varepsilon_{23} \\ \sqrt{2} \varepsilon_{13} \\ \sqrt{2} \varepsilon_{12} \\
+%\end{pmatrix} =
+%\begin{pmatrix}
+%\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \frac{\sqrt{2}}{2} \gamma_{23} \\ \frac{\sqrt{2}}{2} \gamma_{13} \\ \frac{\sqrt{2}}{2} \gamma_{12} \\
+%\end{pmatrix}
+%\end{equation*}
+%
+%Tenzor tuhosti
+%\begin{equation*}
+%C_{ijkl}
+%\quad\rightarrow\quad
+%C_{ab} =
+%\begin{pmatrix}
+%C_{1111} & C_{1122} & C_{1133} & \sqrt{2} C_{1123} & \sqrt{2} C_{1113} & \sqrt{2} C_{1112} \\
+%& C_{2222} & C_{2233} & \sqrt{2} C_{2223} & \sqrt{2} C_{2213} & \sqrt{2} C_{2212} \\
+%&          & C_{3333} & \sqrt{2} C_{3323} & \sqrt{2} C_{3313} & \sqrt{2} C_{3312} \\
+%&          &          & 2 C_{2323} & 2 C_{2313} & 2 C_{2312} \\
+%& \text{\small sym.} &          &          & 2 C_{1313} & 2 C_{1112} \\
+%&          &          &          &          & 2 C_{1212} \\
+%\end{pmatrix}
+%\end{equation*}
+%
+%Výhody:
+%\begin{itemize}
+%	\item zachování hustoty elastické energie
+%	\item zachování normy tenzorů
+%	\item napětí a~přetvoření je mapováno stejným způsobem
+%\end{itemize}
+%
+%Nevýhody:
+%\begin{itemize}
+%	\item složky tenzoru tuhosti se nezachovávají
+%\end{itemize}

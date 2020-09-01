@@ -7,5 +7,6 @@
 *.log
 *.md5
 *.out
+*.synctex
 *.synctex.gz
 *.toc
